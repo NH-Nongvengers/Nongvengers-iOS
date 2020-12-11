@@ -107,3 +107,17 @@ extension UIView {
         addSubview(border)
     }
 }
+
+class onlyLeftRoundView: UIView {
+    required public init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+        
+    }
+}
