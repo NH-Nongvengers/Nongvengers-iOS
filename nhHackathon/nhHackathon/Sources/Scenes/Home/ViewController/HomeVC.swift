@@ -7,6 +7,14 @@
 
 import UIKit
 
+// MARK: TEST STRUCT
+struct myUse {
+    var category : String
+    var left: Int
+    var use: Int
+    var image: String
+}
+
 class HomeVC: UIViewController {
     
     
@@ -39,14 +47,6 @@ class HomeVC: UIViewController {
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-    }
-    
-    // MARK: TEST STRUCT
-    struct myUse {
-        var category : String
-        var left: Int
-        var use: Int
-        var image: String
     }
     
     // MARK: - Init

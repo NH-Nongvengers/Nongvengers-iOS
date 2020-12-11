@@ -36,6 +36,7 @@
 		F4B3C3E02583E4EF004BB9CC /* MonthUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3DF2583E4EE004BB9CC /* MonthUse.storyboard */; };
 		F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */; };
 		F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E92583FA73004BB9CC /* overCVC.swift */; };
+		F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		F4B3C3DF2583E4EE004BB9CC /* MonthUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MonthUse.storyboard; sourceTree = "<group>"; };
 		F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthUseVC.swift; sourceTree = "<group>"; };
 		F4B3C3E92583FA73004BB9CC /* overCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overCVC.swift; sourceTree = "<group>"; };
+		F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryUseTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				F4B3C3932583A834004BB9CC /* myUseTitleTVC.swift */,
 				F4B3C3982583A845004BB9CC /* myUseTVC.swift */,
 				F4B3C3E92583FA73004BB9CC /* overCVC.swift */,
+				F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				F4B3C3DB2583C8D2004BB9CC /* UseDetailVC.swift in Sources */,
 				F4B3C38F2583A827004BB9CC /* monthlyUseTVC.swift in Sources */,
 				F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */,
+				F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */,
 				F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */,
 				F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */,
 				F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */,
