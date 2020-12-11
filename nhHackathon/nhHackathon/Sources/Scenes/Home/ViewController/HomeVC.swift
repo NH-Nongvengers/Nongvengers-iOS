@@ -64,7 +64,12 @@ class HomeVC: UIViewController {
     }
     
     // MARK: - Action
-    @IBAction func lastUse(_ sender: Any) {
+    @IBAction func saving(_ sender: Any) {
+        
+        let sb = UIStoryboard.init(name: "Saving", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SavingVC") as! SavingVC
+        
+        present(vc, animated: true)
         
     }
     

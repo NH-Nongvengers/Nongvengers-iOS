@@ -7,6 +7,11 @@
 
 import UIKit
 
+/**TEST STRUCT*/
+struct Payment {
+    
+}
+
 class UseDetailVC: UIViewController {
     
     //MARK: - Init
@@ -24,11 +29,20 @@ class UseDetailVC: UIViewController {
     
     @IBOutlet weak var categoryImageView: UIImageView!
     
+    @IBOutlet weak var monthlyHistoryTableView: UITableView!
+    
+    
+    var payment : [String] = []
+    
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         swipeRecognizer()
-        // Do any additional setup after loading the view.
+        
+        self.monthlyHistoryTableView.dataSource = self
+        self.monthlyHistoryTableView.delegate = self
+        
     }
     
     //MARK: - Action
@@ -52,6 +66,66 @@ class UseDetailVC: UIViewController {
             default: break
             }
         }
+    }
+    
+}
+
+// MARK: - Extension
+/**TABLE VIEW*/
+extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .white
+        
+        let label = UILabel()
+        label.text = "\(section)일"
+        label.textColor = .veryLightPink
+        label.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 14)
+        label.frame = CGRect(x: 20, y: 6, width: 30, height: 20)
+        
+        view.addSubview(label)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 3
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "monthlyHistoryTVC") as! monthlyHistoryTVC
+        
+        if indexPath.row == 0 {
+            
+            cell.topLine.isHidden = true
+            cell.bottomLine.isHidden = false
+            
+        } else if indexPath.row == 2 {
+            
+            cell.topLine.isHidden = false
+            cell.bottomLine.isHidden = true
+            
+        } else {
+            
+            cell.topLine.isHidden = false
+            cell.bottomLine.isHidden = false
+        
+        }
+        
+        return cell
+        
     }
     
 }

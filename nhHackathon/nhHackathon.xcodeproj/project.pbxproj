@@ -37,6 +37,8 @@
 		F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */; };
 		F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E92583FA73004BB9CC /* overCVC.swift */; };
 		F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */; };
+		F4B3C3F4258407CF004BB9CC /* SavingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3F3258407CF004BB9CC /* SavingVC.swift */; };
+		F4B3C3FC25840DA3004BB9CC /* monthlyHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3FB25840DA3004BB9CC /* monthlyHistoryTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthUseVC.swift; sourceTree = "<group>"; };
 		F4B3C3E92583FA73004BB9CC /* overCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overCVC.swift; sourceTree = "<group>"; };
 		F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryUseTVC.swift; sourceTree = "<group>"; };
+		F4B3C3F3258407CF004BB9CC /* SavingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingVC.swift; sourceTree = "<group>"; };
+		F4B3C3FB25840DA3004BB9CC /* monthlyHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthlyHistoryTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 		F4B3C3532583814B004BB9CC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F4B3C3F3258407CF004BB9CC /* SavingVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				F4B3C3982583A845004BB9CC /* myUseTVC.swift */,
 				F4B3C3E92583FA73004BB9CC /* overCVC.swift */,
 				F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */,
+				F4B3C3FB25840DA3004BB9CC /* monthlyHistoryTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -480,7 +486,9 @@
 				F4B3C38F2583A827004BB9CC /* monthlyUseTVC.swift in Sources */,
 				F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */,
 				F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */,
+				F4B3C3F4258407CF004BB9CC /* SavingVC.swift in Sources */,
 				F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */,
+				F4B3C3FC25840DA3004BB9CC /* monthlyHistoryTVC.swift in Sources */,
 				F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */,
 				F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */,
 				F4B3C31A25835300004BB9CC /* SceneDelegate.swift in Sources */,
