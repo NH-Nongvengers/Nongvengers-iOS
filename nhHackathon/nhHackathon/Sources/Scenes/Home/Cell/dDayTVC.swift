@@ -39,9 +39,9 @@ class dDayTVC: UITableViewCell {
     // 예산 설정하기 뷰로 이동 Action
     @IBAction func setBudget(_ sender: Any) {
         
-        let graphDetail = UIStoryboard.init(name: "SettingBudget", bundle: nil)
+        let sb = UIStoryboard.init(name: "SettingBudget", bundle: nil)
         
-        guard let dvc = graphDetail.instantiateViewController(withIdentifier: "SettingBudgetVC") as? SettingBudgetVC else {
+        guard let dvc = sb.instantiateViewController(withIdentifier: "SettingBudgetVC") as? SettingBudgetVC else {
             return
         }
         

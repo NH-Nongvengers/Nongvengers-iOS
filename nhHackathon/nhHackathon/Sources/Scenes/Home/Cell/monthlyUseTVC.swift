@@ -36,6 +36,15 @@ class monthlyUseTVC: UITableViewCell {
     
     @IBAction func monthlyUse(_ sender: Any) {
         print("CLICKED: 달 별 사용금액 버튼")
+        
+        let sb = UIStoryboard.init(name: "MonthUse", bundle: nil)
+        
+        guard let dvc = sb.instantiateViewController(withIdentifier: "MonthUseVC") as? MonthUseVC else {
+            return
+        }
+        
+        self.window?.rootViewController?.present(dvc, animated: true, completion: nil)
+        
     }
     
 }

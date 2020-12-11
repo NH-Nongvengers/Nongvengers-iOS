@@ -51,15 +51,30 @@ class HomeVC: UIViewController {
     
     // MARK: - Init
     
-    var myUseList : [myUse] = [myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: "")]
+    var myUseList : [myUse] = [myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: "")]
     
     @IBOutlet weak var homeTableView: UITableView!
+    
+    @IBOutlet weak var lastUseButton : UIButton! {
+        didSet {
+            self.lastUseButton.makeRounded(cornerRadius: 22.5)
+            self.lastUseButton.backgroundColor = .salmon
+            self.lastUseButton.dropShadow(color: .black, offSet: CGSize(width: 0, height: 3), opacity: 0.16, radius: 6)
+        }
+    }
+    
+    // MARK: - Action
+    @IBAction func lastUse(_ sender: Any) {
+        
+    }
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.homeTableView.dataSource = self
+        self.homeTableView.delegate = self
         
     }
     
@@ -112,6 +127,39 @@ extension HomeVC : UITableViewDataSource {
     
 }
 
+extension HomeVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 3 {
+            
+            let magazineSB = UIStoryboard.init(name: "UseDetail", bundle: nil)
+            
+            guard let dvc = magazineSB.instantiateViewController(withIdentifier: "UseDetailVC") as? UseDetailVC else {
+                return
+            }
+            
+            print("CLICKED: 카테고리 Cell")
+            
+            dvc.modalPresentationStyle = .fullScreen
+            
+            self.present(dvc, animated: true)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.5) {
+            self.lastUseButton.transform = CGAffineTransform(translationX: self.lastUseButton.bounds.minX, y: 900)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.3) {
+            self.lastUseButton.transform = CGAffineTransform.identity
+        }
+        print("scroll end!")
+    }
+    
+}
 
 extension HomeVC: UIPageViewControllerDataSource {
     

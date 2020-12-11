@@ -18,11 +18,6 @@
 		F4B3C356258381AF004BB9CC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C355258381AF004BB9CC /* Home.storyboard */; };
 		F4B3C35B258381F4004BB9CC /* Saving.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C35A258381F4004BB9CC /* Saving.storyboard */; };
 		F4B3C3602583820D004BB9CC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C35F2583820D004BB9CC /* HomeVC.swift */; };
-		F4B3C36E25839856004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C36925839856004BB9CC /* SpoqaHanSansNeo-Regular.ttf */; };
-		F4B3C36F25839856004BB9CC /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C36A25839856004BB9CC /* SpoqaHanSansNeo-Light.ttf */; };
-		F4B3C37025839856004BB9CC /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C36B25839856004BB9CC /* SpoqaHanSansNeo-Bold.ttf */; };
-		F4B3C37125839856004BB9CC /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C36C25839856004BB9CC /* SpoqaHanSansNeo-Medium.ttf */; };
-		F4B3C37225839856004BB9CC /* SpoqaHanSansNeo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C36D25839856004BB9CC /* SpoqaHanSansNeo-Thin.ttf */; };
 		F4B3C37725839992004BB9CC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C37625839992004BB9CC /* UIColor+Extension.swift */; };
 		F4B3C37C2583A6D5004BB9CC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C37B2583A6D5004BB9CC /* UIView+Extension.swift */; };
 		F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3892583A813004BB9CC /* dDayTVC.swift */; };
@@ -31,6 +26,16 @@
 		F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3982583A845004BB9CC /* myUseTVC.swift */; };
 		F4B3C3B22583AE87004BB9CC /* SettingBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3B12583AE87004BB9CC /* SettingBudgetVC.swift */; };
 		F4B3C3B72583AE93004BB9CC /* SettingBudget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3B62583AE93004BB9CC /* SettingBudget.storyboard */; };
+		F4B3C3CA2583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3C52583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf */; };
+		F4B3C3CB2583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3C62583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf */; };
+		F4B3C3CC2583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3C72583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf */; };
+		F4B3C3CD2583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3C82583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf */; };
+		F4B3C3CE2583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3C92583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf */; };
+		F4B3C3D62583C8B7004BB9CC /* UseDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3D52583C8B7004BB9CC /* UseDetail.storyboard */; };
+		F4B3C3DB2583C8D2004BB9CC /* UseDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3DA2583C8D2004BB9CC /* UseDetailVC.swift */; };
+		F4B3C3E02583E4EF004BB9CC /* MonthUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C3DF2583E4EE004BB9CC /* MonthUse.storyboard */; };
+		F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */; };
+		F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3E92583FA73004BB9CC /* overCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +73,6 @@
 		F4B3C355258381AF004BB9CC /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F4B3C35A258381F4004BB9CC /* Saving.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Saving.storyboard; sourceTree = "<group>"; };
 		F4B3C35F2583820D004BB9CC /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		F4B3C36925839856004BB9CC /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Regular.ttf"; path = "../../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
-		F4B3C36A25839856004BB9CC /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
-		F4B3C36B25839856004BB9CC /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Bold.ttf"; path = "../../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
-		F4B3C36C25839856004BB9CC /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
-		F4B3C36D25839856004BB9CC /* SpoqaHanSansNeo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Thin.ttf"; path = "../../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Thin.ttf"; sourceTree = "<group>"; };
 		F4B3C37625839992004BB9CC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F4B3C37B2583A6D5004BB9CC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F4B3C3892583A813004BB9CC /* dDayTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dDayTVC.swift; sourceTree = "<group>"; };
@@ -81,6 +81,16 @@
 		F4B3C3982583A845004BB9CC /* myUseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myUseTVC.swift; sourceTree = "<group>"; };
 		F4B3C3B12583AE87004BB9CC /* SettingBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBudgetVC.swift; sourceTree = "<group>"; };
 		F4B3C3B62583AE93004BB9CC /* SettingBudget.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingBudget.storyboard; sourceTree = "<group>"; };
+		F4B3C3C52583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Regular.ttf"; path = "../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Regular.ttf"; sourceTree = "<group>"; };
+		F4B3C3C62583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Bold.ttf"; path = "../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Bold.ttf"; sourceTree = "<group>"; };
+		F4B3C3C72583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Light.ttf"; path = "../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Light.ttf"; sourceTree = "<group>"; };
+		F4B3C3C82583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Medium.ttf"; path = "../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Medium.ttf"; sourceTree = "<group>"; };
+		F4B3C3C92583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SpoqaHanSansNeo-Thin.ttf"; path = "../../../../../Downloads/SpoqaHanSansNeo_TTF_original/SpoqaHanSansNeo-Thin.ttf"; sourceTree = "<group>"; };
+		F4B3C3D52583C8B7004BB9CC /* UseDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UseDetail.storyboard; sourceTree = "<group>"; };
+		F4B3C3DA2583C8D2004BB9CC /* UseDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseDetailVC.swift; sourceTree = "<group>"; };
+		F4B3C3DF2583E4EE004BB9CC /* MonthUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MonthUse.storyboard; sourceTree = "<group>"; };
+		F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthUseVC.swift; sourceTree = "<group>"; };
+		F4B3C3E92583FA73004BB9CC /* overCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				F4B3C35F2583820D004BB9CC /* HomeVC.swift */,
+				F4B3C3DA2583C8D2004BB9CC /* UseDetailVC.swift */,
+				F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -231,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				F4B3C355258381AF004BB9CC /* Home.storyboard */,
+				F4B3C3D52583C8B7004BB9CC /* UseDetail.storyboard */,
+				F4B3C3DF2583E4EE004BB9CC /* MonthUse.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -260,11 +274,11 @@
 		F4B3C36825839838004BB9CC /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				F4B3C36B25839856004BB9CC /* SpoqaHanSansNeo-Bold.ttf */,
-				F4B3C36A25839856004BB9CC /* SpoqaHanSansNeo-Light.ttf */,
-				F4B3C36C25839856004BB9CC /* SpoqaHanSansNeo-Medium.ttf */,
-				F4B3C36925839856004BB9CC /* SpoqaHanSansNeo-Regular.ttf */,
-				F4B3C36D25839856004BB9CC /* SpoqaHanSansNeo-Thin.ttf */,
+				F4B3C3C62583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf */,
+				F4B3C3C72583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf */,
+				F4B3C3C82583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf */,
+				F4B3C3C52583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf */,
+				F4B3C3C92583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 				F4B3C38E2583A827004BB9CC /* monthlyUseTVC.swift */,
 				F4B3C3932583A834004BB9CC /* myUseTitleTVC.swift */,
 				F4B3C3982583A845004BB9CC /* myUseTVC.swift */,
+				F4B3C3E92583FA73004BB9CC /* overCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -416,16 +431,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4B3C32425835304004BB9CC /* LaunchScreen.storyboard in Resources */,
+				F4B3C3CB2583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf in Resources */,
+				F4B3C3CC2583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf in Resources */,
+				F4B3C3CD2583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf in Resources */,
+				F4B3C3E02583E4EF004BB9CC /* MonthUse.storyboard in Resources */,
 				F4B3C35B258381F4004BB9CC /* Saving.storyboard in Resources */,
 				F4B3C3B72583AE93004BB9CC /* SettingBudget.storyboard in Resources */,
-				F4B3C36F25839856004BB9CC /* SpoqaHanSansNeo-Light.ttf in Resources */,
-				F4B3C37125839856004BB9CC /* SpoqaHanSansNeo-Medium.ttf in Resources */,
+				F4B3C3CE2583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf in Resources */,
+				F4B3C3CA2583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				F4B3C32125835304004BB9CC /* Assets.xcassets in Resources */,
-				F4B3C37025839856004BB9CC /* SpoqaHanSansNeo-Bold.ttf in Resources */,
-				F4B3C37225839856004BB9CC /* SpoqaHanSansNeo-Thin.ttf in Resources */,
 				F4B3C31F25835300004BB9CC /* Main.storyboard in Resources */,
-				F4B3C36E25839856004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				F4B3C356258381AF004BB9CC /* Home.storyboard in Resources */,
+				F4B3C3D62583C8B7004BB9CC /* UseDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,10 +469,13 @@
 			files = (
 				F4B3C3B22583AE87004BB9CC /* SettingBudgetVC.swift in Sources */,
 				F4B3C3942583A834004BB9CC /* myUseTitleTVC.swift in Sources */,
+				F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */,
 				F4B3C37C2583A6D5004BB9CC /* UIView+Extension.swift in Sources */,
 				F4B3C31C25835300004BB9CC /* ViewController.swift in Sources */,
 				F4B3C3602583820D004BB9CC /* HomeVC.swift in Sources */,
+				F4B3C3DB2583C8D2004BB9CC /* UseDetailVC.swift in Sources */,
 				F4B3C38F2583A827004BB9CC /* monthlyUseTVC.swift in Sources */,
+				F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */,
 				F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */,
 				F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */,
 				F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */,
