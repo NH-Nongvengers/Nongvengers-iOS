@@ -39,6 +39,7 @@
 		F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */; };
 		F4B3C3F4258407CF004BB9CC /* SavingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3F3258407CF004BB9CC /* SavingVC.swift */; };
 		F4B3C3FC25840DA3004BB9CC /* monthlyHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C3FB25840DA3004BB9CC /* monthlyHistoryTVC.swift */; };
+		F4B3C45125849E66004BB9CC /* SavingFinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C45025849E64004BB9CC /* SavingFinVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		F4B3C3EE2583FDBB004BB9CC /* categoryUseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryUseTVC.swift; sourceTree = "<group>"; };
 		F4B3C3F3258407CF004BB9CC /* SavingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingVC.swift; sourceTree = "<group>"; };
 		F4B3C3FB25840DA3004BB9CC /* monthlyHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = monthlyHistoryTVC.swift; sourceTree = "<group>"; };
+		F4B3C45025849E64004BB9CC /* SavingFinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingFinVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				F4B3C3F3258407CF004BB9CC /* SavingVC.swift */,
+				F4B3C45025849E64004BB9CC /* SavingFinVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */,
 				F4B3C3FC25840DA3004BB9CC /* monthlyHistoryTVC.swift in Sources */,
 				F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */,
+				F4B3C45125849E66004BB9CC /* SavingFinVC.swift in Sources */,
 				F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */,
 				F4B3C31A25835300004BB9CC /* SceneDelegate.swift in Sources */,
 				F4B3C37725839992004BB9CC /* UIColor+Extension.swift in Sources */,
