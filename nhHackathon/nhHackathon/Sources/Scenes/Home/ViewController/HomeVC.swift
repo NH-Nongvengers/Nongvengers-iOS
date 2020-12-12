@@ -40,6 +40,7 @@ class HomeVC: UIViewController {
         pageViewController.delegate = self
         
         //  처음에 보여줄 컨텐츠 설정
+        
         let firstVC = instantiateViewController(index: 0)
         pageViewController.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         
@@ -61,6 +62,20 @@ class HomeVC: UIViewController {
             self.lastUseButton.backgroundColor = .salmon
             self.lastUseButton.dropShadow(color: .black, offSet: CGSize(width: 0, height: 3), opacity: 0.16, radius: 6)
         }
+    }
+    
+    func setAnimation() {
+        let animationView = AnimationView(name: "main")
+        
+        settingView.addSubview(animationView)
+        
+        animationView.contentMode = .scaleAspectFill
+        
+        animationView.frame = settingView.bounds
+        
+        animationView.play(fromProgress: 0, toProgress: 0.8, loopMode: .none, completion: nil)
+        // animationView.play()
+
     }
     
     // MARK: - Action

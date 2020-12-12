@@ -72,9 +72,17 @@ class SavingVC: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func save(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SavingFinVC") as! SavingFinVC
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
 }
 
+//MARK: - Extension
 extension SavingVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         registerForKeyboardNotifications()
