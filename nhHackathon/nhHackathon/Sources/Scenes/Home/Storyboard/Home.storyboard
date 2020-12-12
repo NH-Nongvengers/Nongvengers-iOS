@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m9C-E2-adC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cgZ-o8-WKc">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -19,6 +19,14 @@
         </array>
     </customFonts>
     <scenes>
+        <!--PageVC-->
+        <scene sceneID="IW0-0H-QlA">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="cgZ-o8-WKc" customClass="PageVC" customModule="nhHackathon" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DQY-iv-Hg0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-496"/>
+        </scene>
         <!--HomeVC-->
         <scene sceneID="QhD-qT-hbK">
             <objects>
@@ -31,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dDayTVC" rowHeight="45" id="eRv-qd-eru" customClass="dDayTVC" customModule="nhHackathon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="dDayTVC" rowHeight="45" id="eRv-qd-eru" customClass="dDayTVC" customModule="nhHackathon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eRv-qd-eru" id="vnN-hw-Az0">
@@ -85,7 +93,7 @@
                                             <outlet property="setBudgetButton" destination="HLQ-xr-RU8" id="1eU-SM-BDd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="monthlyUseTVC" rowHeight="238" id="RYb-1l-NsI" customClass="monthlyUseTVC" customModule="nhHackathon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="monthlyUseTVC" rowHeight="238" id="RYb-1l-NsI" customClass="monthlyUseTVC" customModule="nhHackathon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="73" width="375" height="238"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RYb-1l-NsI" id="NBF-oH-k6U">
@@ -210,7 +218,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="animationView" destination="Bri-kA-UGM" id="fX2-4h-NCA"/>
+                                            <outlet property="animationView" destination="Bri-kA-UGM" id="av2-5C-7ps"/>
                                             <outlet property="availableLabel" destination="yfM-Ne-aBP" id="Hav-eT-4sl"/>
                                             <outlet property="budgetLabel" destination="oZa-pE-05Y" id="J6L-Lu-BJt"/>
                                             <outlet property="monthLabel" destination="aOb-lO-biE" id="JWV-bG-Ajh"/>
@@ -218,7 +226,7 @@
                                             <outlet property="monthlyUseView" destination="9iM-Nf-GKT" id="SfQ-EU-HSD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myUseTitleTVC" rowHeight="59" id="isa-fz-L9v" customClass="myUseTitleTVC" customModule="nhHackathon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myUseTitleTVC" rowHeight="59" id="isa-fz-L9v" customClass="myUseTitleTVC" customModule="nhHackathon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="311" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="isa-fz-L9v" id="i7u-Wp-69U">
@@ -253,7 +261,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myUseTVC" rowHeight="68" id="SL3-5G-ZRT" customClass="myUseTVC" customModule="nhHackathon" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myUseTVC" rowHeight="68" id="SL3-5G-ZRT" customClass="myUseTVC" customModule="nhHackathon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="370" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SL3-5G-ZRT" id="gcF-r0-6vi">
@@ -356,37 +364,8 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIj-9C-bD6">
                                 <rect key="frame" x="0.0" y="44" width="375" height="47"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NbM-It-meB">
-                                        <rect key="frame" x="23" y="38" width="19" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.54509803921568623" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저축" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2q-xd-K5J">
-                                        <rect key="frame" x="57.333333333333343" y="7" width="40.666666666666657" height="32.666666666666664"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="I2q-xd-K5J" secondAttribute="height" multiplier="41:33" id="bGF-by-y6s"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="22"/>
-                                        <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-oS-hZ5">
-                                        <rect key="frame" x="22" y="7" width="20.333333333333329" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="qCh-oS-hZ5" secondAttribute="height" multiplier="7:11" id="k2a-Bc-gyf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="22"/>
-                                        <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="I2q-xd-K5J" firstAttribute="top" secondItem="CIj-9C-bD6" secondAttribute="top" constant="7" id="CPq-v3-MAX"/>
-                                    <constraint firstItem="qCh-oS-hZ5" firstAttribute="top" secondItem="CIj-9C-bD6" secondAttribute="top" constant="7" id="Qlq-8H-Tzv"/>
-                                    <constraint firstItem="qCh-oS-hZ5" firstAttribute="leading" secondItem="CIj-9C-bD6" secondAttribute="leading" constant="22" id="XDa-Og-RCt"/>
-                                    <constraint firstItem="I2q-xd-K5J" firstAttribute="leading" secondItem="qCh-oS-hZ5" secondAttribute="trailing" constant="15" id="i3B-Dt-UdH"/>
                                     <constraint firstAttribute="width" secondItem="CIj-9C-bD6" secondAttribute="height" multiplier="375:47" id="miJ-MG-ACH"/>
                                 </constraints>
                             </view>
@@ -428,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ila-Lu-Raj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5.5999999999999996" y="184.72906403940888"/>
+            <point key="canvasLocation" x="876" y="-497"/>
         </scene>
     </scenes>
     <resources>

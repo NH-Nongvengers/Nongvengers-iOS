@@ -29,9 +29,8 @@ class SaveToPigFinVC: UIViewController {
     
     @IBOutlet weak var announceView: UIView! {
         didSet {
-            self.announceView.backgroundColor = .veryLightPinkThree
             self.announceView.setBorder(borderColor: .veryLightPinkTwo, borderWidth: 1)
-            self.announceView.roundTopCorners(cornerRadius: 10)
+            self.announceView.makeRounded(cornerRadius: 10)
         }
     }
     
@@ -48,5 +47,13 @@ class SaveToPigFinVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    //MARK: - Action
+    
+    @IBAction func close(_ sender: Any) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        
+        print("CLICKED: 저금통 채우기 완료 VC")
+    }
+    
 }

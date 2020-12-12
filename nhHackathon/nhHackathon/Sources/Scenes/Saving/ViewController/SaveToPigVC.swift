@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class SaveToPigVC: UIViewController {
     
@@ -29,7 +30,7 @@ class SaveToPigVC: UIViewController {
     
     @IBOutlet weak var saveAmountLabel: UIView! {
         didSet {
-            self.saveAmountLabel.makeRounded(cornerRadius: 60)
+            self.saveAmountLabel.makeRounded(cornerRadius: 44.5)
             self.saveAmountLabel.backgroundColor = .duckEggBlue
         }
     }
@@ -44,7 +45,7 @@ class SaveToPigVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setAnimation()
         // Do any additional setup after loading the view.
     }
     
@@ -56,4 +57,24 @@ class SaveToPigVC: UIViewController {
         
     }
     
+    @IBAction func fillPig(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SaveToPigFinVC") as! SaveToPigFinVC
+        
+        present(vc, animated: true)
+        
+    }
+    
+    func setAnimation() {
+        let lottieView = AnimationView(name: "saving")
+        
+        animationView.addSubview(lottieView)
+        
+        lottieView.contentMode = .scaleAspectFill
+        
+        lottieView.frame = animationView.bounds
+        
+        lottieView.play()
+        lottieView.loopMode = .repeat(3)
+    }
 }

@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		188FA86AAA45D297E7624C25 /* Pods_nhHackathon_nhHackathonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262A1E1D76A323FD6E6C990 /* Pods_nhHackathon_nhHackathonUITests.framework */; };
 		A3E63F54CA25E1D52C61E615 /* Pods_nhHackathonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA45E9182878A7636465939 /* Pods_nhHackathonTests.framework */; };
 		DEAA716D3F056CD22F412B73 /* Pods_nhHackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D148A2FACA2C1D074DBAB3 /* Pods_nhHackathon.framework */; };
+		F47E4F3625850B79009F36E8 /* SavingDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47E4F3525850B79009F36E8 /* SavingDetail.storyboard */; };
+		F47E4F3B25850BAD009F36E8 /* SavingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4F3A25850BAD009F36E8 /* SavingDetailVC.swift */; };
+		F47E4F40258510E3009F36E8 /* savingAfterSavingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4F3F258510E3009F36E8 /* savingAfterSavingTVC.swift */; };
 		F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31725835300004BB9CC /* AppDelegate.swift */; };
 		F4B3C31A25835300004BB9CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31925835300004BB9CC /* SceneDelegate.swift */; };
 		F4B3C31C25835300004BB9CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31B25835300004BB9CC /* ViewController.swift */; };
@@ -49,7 +52,14 @@
 		F4B3C4712584B2ED004BB9CC /* SaveToPig.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4702584B2ED004BB9CC /* SaveToPig.storyboard */; };
 		F4B3C4762584B301004BB9CC /* SaveToPigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C4752584B301004BB9CC /* SaveToPigVC.swift */; };
 		F4B3C47B2584C4A0004BB9CC /* SaveToPigFinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C47A2584C4A0004BB9CC /* SaveToPigFinVC.swift */; };
-		F4B3C4802584C7D1004BB9CC /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C47F2584C7D0004BB9CC /* main.json */; };
+		F4B3C4B22584DDD2004BB9CC /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4AF2584DDD2004BB9CC /* img_1.png */; };
+		F4B3C4B32584DDD2004BB9CC /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4B02584DDD2004BB9CC /* img_0.png */; };
+		F4B3C4B42584DDD2004BB9CC /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4B12584DDD2004BB9CC /* main.json */; };
+		F4B3C4B92584E81B004BB9CC /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C4B82584E81A004BB9CC /* PageVC.swift */; };
+		F4B3C4C22584F8DE004BB9CC /* img_1_s.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4BF2584F8DD004BB9CC /* img_1_s.png */; };
+		F4B3C4C32584F8DE004BB9CC /* img_0_s.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4C02584F8DD004BB9CC /* img_0_s.png */; };
+		F4B3C4C42584F8DE004BB9CC /* saving.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B3C4C12584F8DD004BB9CC /* saving.json */; };
+		F4B3C4D52584FC4C004BB9CC /* pigAmountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C4D42584FC4C004BB9CC /* pigAmountTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +89,9 @@
 		AEA45E9182878A7636465939 /* Pods_nhHackathonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nhHackathonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D041BF5F97B86E5423CC492C /* Pods-nhHackathon-nhHackathonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhHackathon-nhHackathonUITests.release.xcconfig"; path = "Target Support Files/Pods-nhHackathon-nhHackathonUITests/Pods-nhHackathon-nhHackathonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFF2C502E4C2771F0B70D03A /* Pods-nhHackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhHackathon.release.xcconfig"; path = "Target Support Files/Pods-nhHackathon/Pods-nhHackathon.release.xcconfig"; sourceTree = "<group>"; };
+		F47E4F3525850B79009F36E8 /* SavingDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavingDetail.storyboard; sourceTree = "<group>"; };
+		F47E4F3A25850BAD009F36E8 /* SavingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingDetailVC.swift; sourceTree = "<group>"; };
+		F47E4F3F258510E3009F36E8 /* savingAfterSavingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = savingAfterSavingTVC.swift; sourceTree = "<group>"; };
 		F4B3C31425835300004BB9CC /* nhHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nhHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3C31725835300004BB9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3C31925835300004BB9CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +137,14 @@
 		F4B3C4702584B2ED004BB9CC /* SaveToPig.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SaveToPig.storyboard; sourceTree = "<group>"; };
 		F4B3C4752584B301004BB9CC /* SaveToPigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToPigVC.swift; sourceTree = "<group>"; };
 		F4B3C47A2584C4A0004BB9CC /* SaveToPigFinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToPigFinVC.swift; sourceTree = "<group>"; };
-		F4B3C47F2584C7D0004BB9CC /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = main.json; path = ../../../../../Downloads/main/main.json; sourceTree = "<group>"; };
+		F4B3C4AF2584DDD2004BB9CC /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
+		F4B3C4B02584DDD2004BB9CC /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		F4B3C4B12584DDD2004BB9CC /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		F4B3C4B82584E81A004BB9CC /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		F4B3C4BF2584F8DD004BB9CC /* img_1_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1_s.png; sourceTree = "<group>"; };
+		F4B3C4C02584F8DD004BB9CC /* img_0_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0_s.png; sourceTree = "<group>"; };
+		F4B3C4C12584F8DD004BB9CC /* saving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = saving.json; sourceTree = "<group>"; };
+		F4B3C4D42584FC4C004BB9CC /* pigAmountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pigAmountTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +195,6 @@
 				A2E9849BB50F3E59D5D0396D /* Pods-nhHackathonTests.debug.xcconfig */,
 				AACDB1A832A4CE18610C3519 /* Pods-nhHackathonTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -264,11 +283,11 @@
 		F4B3C34E25838101004BB9CC /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F4B3C3A62583AE42004BB9CC /* Budget */,
 				F4B3C32225835304004BB9CC /* LaunchScreen.storyboard */,
 				F4B3C31D25835300004BB9CC /* Main.storyboard */,
 				F4B3C3502583811D004BB9CC /* Saving */,
 				F4B3C34F25838118004BB9CC /* Home */,
+				F4B3C3A62583AE42004BB9CC /* Budget */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -299,6 +318,7 @@
 				F4B3C35F2583820D004BB9CC /* HomeVC.swift */,
 				F4B3C3DA2583C8D2004BB9CC /* UseDetailVC.swift */,
 				F4B3C3E42583E50D004BB9CC /* MonthUseVC.swift */,
+				F4B3C4B82584E81A004BB9CC /* PageVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +341,7 @@
 				F4B3C46B2584B13F004BB9CC /* SavingMainVC.swift */,
 				F4B3C4752584B301004BB9CC /* SaveToPigVC.swift */,
 				F4B3C47A2584C4A0004BB9CC /* SaveToPigFinVC.swift */,
+				F47E4F3A25850BAD009F36E8 /* SavingDetailVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -331,6 +352,7 @@
 				F4B3C35A258381F4004BB9CC /* Saving.storyboard */,
 				F4B3C4662584B119004BB9CC /* SavingMain.storyboard */,
 				F4B3C4702584B2ED004BB9CC /* SaveToPig.storyboard */,
+				F47E4F3525850B79009F36E8 /* SavingDetail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -396,7 +418,8 @@
 		F4B3C3BB2583AED3004BB9CC /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				F4B3C47F2584C7D0004BB9CC /* main.json */,
+				F4B3C4BD2584F8DD004BB9CC /* saving */,
+				F4B3C4AD2584DDD2004BB9CC /* main (1) */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -405,8 +428,48 @@
 			isa = PBXGroup;
 			children = (
 				F4B3C4612584AC3B004BB9CC /* savingMonthlyUseTVC.swift */,
+				F4B3C4D42584FC4C004BB9CC /* pigAmountTVC.swift */,
+				F47E4F3F258510E3009F36E8 /* savingAfterSavingTVC.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F4B3C4AD2584DDD2004BB9CC /* main (1) */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3C4AE2584DDD2004BB9CC /* images */,
+				F4B3C4B12584DDD2004BB9CC /* main.json */,
+			);
+			name = "main (1)";
+			path = "../../../../../Downloads/main (1)";
+			sourceTree = "<group>";
+		};
+		F4B3C4AE2584DDD2004BB9CC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3C4AF2584DDD2004BB9CC /* img_1.png */,
+				F4B3C4B02584DDD2004BB9CC /* img_0.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F4B3C4BD2584F8DD004BB9CC /* saving */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3C4BE2584F8DD004BB9CC /* images */,
+				F4B3C4C12584F8DD004BB9CC /* saving.json */,
+			);
+			name = saving;
+			path = ../../../../../Downloads/saving;
+			sourceTree = "<group>";
+		};
+		F4B3C4BE2584F8DD004BB9CC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F4B3C4BF2584F8DD004BB9CC /* img_1_s.png */,
+				F4B3C4C02584F8DD004BB9CC /* img_0_s.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,22 +580,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4B3C4C32584F8DE004BB9CC /* img_0_s.png in Resources */,
+				F4B3C4B42584DDD2004BB9CC /* main.json in Resources */,
 				F4B3C32425835304004BB9CC /* LaunchScreen.storyboard in Resources */,
+				F4B3C4B32584DDD2004BB9CC /* img_0.png in Resources */,
 				F4B3C3CB2583B85E004BB9CC /* SpoqaHanSansNeo-Bold.ttf in Resources */,
 				F4B3C3CC2583B85E004BB9CC /* SpoqaHanSansNeo-Light.ttf in Resources */,
 				F4B3C4672584B119004BB9CC /* SavingMain.storyboard in Resources */,
 				F4B3C3CD2583B85E004BB9CC /* SpoqaHanSansNeo-Medium.ttf in Resources */,
 				F4B3C3E02583E4EF004BB9CC /* MonthUse.storyboard in Resources */,
-				F4B3C4802584C7D1004BB9CC /* main.json in Resources */,
 				F4B3C35B258381F4004BB9CC /* Saving.storyboard in Resources */,
 				F4B3C3B72583AE93004BB9CC /* SettingBudget.storyboard in Resources */,
 				F4B3C3CE2583B85E004BB9CC /* SpoqaHanSansNeo-Thin.ttf in Resources */,
+				F4B3C4B22584DDD2004BB9CC /* img_1.png in Resources */,
 				F4B3C3CA2583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */,
+				F4B3C4C22584F8DE004BB9CC /* img_1_s.png in Resources */,
 				F4B3C32125835304004BB9CC /* Assets.xcassets in Resources */,
 				F4B3C31F25835300004BB9CC /* Main.storyboard in Resources */,
+				F4B3C4C42584F8DE004BB9CC /* saving.json in Resources */,
 				F4B3C4712584B2ED004BB9CC /* SaveToPig.storyboard in Resources */,
 				F4B3C356258381AF004BB9CC /* Home.storyboard in Resources */,
 				F4B3C3D62583C8B7004BB9CC /* UseDetail.storyboard in Resources */,
+				F47E4F3625850B79009F36E8 /* SavingDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,9 +731,11 @@
 			files = (
 				F4B3C3B22583AE87004BB9CC /* SettingBudgetVC.swift in Sources */,
 				F4B3C3942583A834004BB9CC /* myUseTitleTVC.swift in Sources */,
+				F47E4F3B25850BAD009F36E8 /* SavingDetailVC.swift in Sources */,
 				F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */,
 				F4B3C37C2583A6D5004BB9CC /* UIView+Extension.swift in Sources */,
 				F4B3C31C25835300004BB9CC /* ViewController.swift in Sources */,
+				F47E4F40258510E3009F36E8 /* savingAfterSavingTVC.swift in Sources */,
 				F4B3C47B2584C4A0004BB9CC /* SaveToPigFinVC.swift in Sources */,
 				F4B3C3602583820D004BB9CC /* HomeVC.swift in Sources */,
 				F4B3C3DB2583C8D2004BB9CC /* UseDetailVC.swift in Sources */,
@@ -681,6 +752,8 @@
 				F4B3C3992583A845004BB9CC /* myUseTVC.swift in Sources */,
 				F4B3C31A25835300004BB9CC /* SceneDelegate.swift in Sources */,
 				F4B3C37725839992004BB9CC /* UIColor+Extension.swift in Sources */,
+				F4B3C4B92584E81B004BB9CC /* PageVC.swift in Sources */,
+				F4B3C4D52584FC4C004BB9CC /* pigAmountTVC.swift in Sources */,
 				F4B3C46C2584B13F004BB9CC /* SavingMainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

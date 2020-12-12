@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class monthlyUseTVC: UITableViewCell {
 
@@ -30,6 +31,7 @@ class monthlyUseTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setAnimation()
     }
 
     // MARK: - Action
@@ -45,6 +47,21 @@ class monthlyUseTVC: UITableViewCell {
         
         self.window?.rootViewController?.present(dvc, animated: true, completion: nil)
         
+    }
+    
+    func setAnimation() {
+        let lottieView = AnimationView(name: "main")
+        
+        animationView.addSubview(lottieView)
+        
+        lottieView.contentMode = .scaleAspectFill
+        
+        lottieView.frame = animationView.bounds
+        
+        // lottieView.play(fromProgress: 0, toProgress: 0.8, loopMode: .none, completion: nil)
+        lottieView.play()
+        lottieView.loopMode = .repeat(3)
+
     }
     
 }
