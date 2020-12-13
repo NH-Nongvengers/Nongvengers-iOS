@@ -145,9 +145,40 @@ class SaveToPigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     @IBAction func fillPig(_ sender: Any) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SaveToPigFinVC") as! SaveToPigFinVC
+        guard let amount = saveLabel.text else { return }
         
-        present(vc, animated: true)
+        SavingService.shared.saveSaving(amount, 5) { data in
+            switch data {
+                
+            case .success(let res) :
+                print("티끌 모으기 성공")
+                
+                
+                print("=== POST: 티끌 모으기 ===")
+                
+                let totalAmount = res as! DataClass
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SaveToPigFinVC") as! SaveToPigFinVC
+                
+                vc.addAmount = amount
+                
+                vc.totalAmount = String(totalAmount.total)
+                
+                self.present(vc, animated: true)
+                
+            case .requestErr(let msg):
+                print("절약 저축 requestErr")
+                print(msg)
+            case .pathErr:
+                print("절약 저축 pathErr")
+            case .serverErr:
+                print("절약 저축 serverErr")
+            case .networkFail:
+                print("절약 저축 networkFail")
+            case .dbErr:
+                print("절약 저축 dbErr")
+            }
+        }
         
     }
     

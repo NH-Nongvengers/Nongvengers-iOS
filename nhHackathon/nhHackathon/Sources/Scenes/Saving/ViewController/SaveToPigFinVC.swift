@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import SwiftOverlayShims
+import SwiftGifOrigin
 
 class SaveToPigFinVC: UIViewController {
 
     //MARK: - Init
+    
+    var addAmount: String = ""
+    var totalAmount: String = ""
+    
+    @IBOutlet weak var addAmountLabel: UILabel!
+    
+    @IBOutlet weak var totalAmountLabel: UILabel!
     
     @IBOutlet weak var announceLabel: UILabel! {
         didSet {
@@ -27,6 +36,21 @@ class SaveToPigFinVC: UIViewController {
     
     @IBOutlet weak var animationView: UIView!
     
+    @IBOutlet weak var gifView: UIImageView! {
+        
+        didSet {
+            self.gifView.image = UIImage.gif(name: "savingFinish")
+            
+            do {
+                let imageData = try Data(contentsOf: Bundle.main.url(forResource: "savingFinish", withExtension: "gif")!)
+                self.gifView.image = UIImage.gif(data: imageData)
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+    }
     @IBOutlet weak var announceView: UIView! {
         didSet {
             self.announceView.setBorder(borderColor: .veryLightPinkTwo, borderWidth: 1)
@@ -44,7 +68,8 @@ class SaveToPigFinVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.addAmountLabel.text = addAmount + "원"
+        self.totalAmountLabel.text = "총 " + totalAmount + "원"
         // Do any additional setup after loading the view.
     }
     

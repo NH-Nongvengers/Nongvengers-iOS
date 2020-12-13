@@ -24,23 +24,12 @@ struct ResponseObject<T: Codable>: Codable {
 
 struct ResponseString: Codable {
     let status: Int
+    let success: Bool
     let message: String
-    let data: DataClass?
-    
-    enum CodingKeys: String, CodingKey {
-        case status = "status_idx"
-        case message = "message"
-        case data = "data"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-        message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode(DataClass.self, forKey: .data)) ?? nil
-    }
+    let data: DataClass
 }
 
+// MARK: - DataClass
 struct DataClass: Codable {
-    let token: String
+    let total: String
 }

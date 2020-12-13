@@ -23,3 +23,33 @@ struct Category: Codable {
     let categoryName: String
     let percent: Int
 }
+
+struct ResponseReport: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+    let data: Report?
+}
+
+struct Report: Codable {
+    let summary: Summary
+    let overConsumption, result: [OverConsumption]
+}
+
+struct OverConsumption: Codable {
+    let categoryIdx: Int
+    let categoryName: String
+    let budget: Int
+    let consumption: Int?
+    let percent: Int
+    let balance: Int?
+}
+
+struct Summary: Codable {
+    let month, budget, amountUsed, balance: Int
+}
+
+/* 저축 */
+struct SaveMain: Codable {
+    let sum, saved, changes, coin: Int
+}

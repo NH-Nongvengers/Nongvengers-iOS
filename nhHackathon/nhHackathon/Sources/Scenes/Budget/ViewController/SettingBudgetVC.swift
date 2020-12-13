@@ -9,21 +9,66 @@ import UIKit
 
 class SettingBudgetVC: UIViewController {
 
+    //MARK: - Init
+    
+    @IBOutlet weak var topContainView: UIView! {
+        didSet {
+            self.topContainView.backgroundColor = .salmon
+        }
+    }
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    @IBOutlet weak var averageAmountLabel: UILabel!
+    
+    @IBOutlet weak var averageAmount: UILabel!
+    
+    
+    @IBOutlet weak var oneMonthAmountLabel: UILabel!
+    
+    @IBOutlet weak var oneMonthAmount: UILabel!
+    
+    var categoryList : [String] = ["", "", "", "", "", "", "", "", ""]
+    
+    @IBOutlet weak var finishButton: UIButton! {
+        didSet {
+            self.finishButton.makeRounded(cornerRadius: 13.5)
+            self.finishButton.setBorder(borderColor: .white, borderWidth: 1)
+        }
+    }
+    
+    
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.categoryCollectionView.dataSource = self
+        
+    }
+    
+    //MARK: - Action
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: - Extension
+extension SettingBudgetVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryList.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "budgetCVC", for: indexPath) as! budgetCVC
+        
+        
+        
+        return cell
+    }
+    
+    
+    
 }

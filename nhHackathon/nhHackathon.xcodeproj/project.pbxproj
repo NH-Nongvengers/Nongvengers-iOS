@@ -18,6 +18,13 @@
 		F47E4F6125855342009F36E8 /* ResposeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4F6025855342009F36E8 /* ResposeType.swift */; };
 		F47E4F67258553B7009F36E8 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4F66258553B7009F36E8 /* HomeService.swift */; };
 		F47E4F7725855CD7009F36E8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4F7625855CD7009F36E8 /* Models.swift */; };
+		F47E4FAB2585E849009F36E8 /* savingFinish.gif in Resources */ = {isa = PBXBuildFile; fileRef = F47E4FAA2585E848009F36E8 /* savingFinish.gif */; };
+		F47E4FBB2585F9FF009F36E8 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FBA2585F9FF009F36E8 /* ReportService.swift */; };
+		F47E4FCA258614A5009F36E8 /* budgetCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FC9258614A5009F36E8 /* budgetCVC.swift */; };
+		F47E4FCF25861ED2009F36E8 /* SavingTiggleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FCE25861ED1009F36E8 /* SavingTiggleVC.swift */; };
+		F47E4FD425862009009F36E8 /* SavingCoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FD325862009009F36E8 /* SavingCoinVC.swift */; };
+		F47E4FD925862454009F36E8 /* savingLeftTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FD825862454009F36E8 /* savingLeftTVC.swift */; };
+		F47E4FDF25862A80009F36E8 /* SavingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47E4FDE25862A80009F36E8 /* SavingService.swift */; };
 		F4B3C31825835300004BB9CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31725835300004BB9CC /* AppDelegate.swift */; };
 		F4B3C31A25835300004BB9CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31925835300004BB9CC /* SceneDelegate.swift */; };
 		F4B3C31C25835300004BB9CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B3C31B25835300004BB9CC /* ViewController.swift */; };
@@ -102,6 +109,13 @@
 		F47E4F6025855342009F36E8 /* ResposeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResposeType.swift; sourceTree = "<group>"; };
 		F47E4F66258553B7009F36E8 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		F47E4F7625855CD7009F36E8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		F47E4FAA2585E848009F36E8 /* savingFinish.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = savingFinish.gif; path = ../../../../../Downloads/savingFinish.gif; sourceTree = "<group>"; };
+		F47E4FBA2585F9FF009F36E8 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		F47E4FC9258614A5009F36E8 /* budgetCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = budgetCVC.swift; sourceTree = "<group>"; };
+		F47E4FCE25861ED1009F36E8 /* SavingTiggleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTiggleVC.swift; sourceTree = "<group>"; };
+		F47E4FD325862009009F36E8 /* SavingCoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingCoinVC.swift; sourceTree = "<group>"; };
+		F47E4FD825862454009F36E8 /* savingLeftTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = savingLeftTVC.swift; sourceTree = "<group>"; };
+		F47E4FDE25862A80009F36E8 /* SavingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingService.swift; sourceTree = "<group>"; };
 		F4B3C31425835300004BB9CC /* nhHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nhHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B3C31725835300004BB9CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B3C31925835300004BB9CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F47E4F66258553B7009F36E8 /* HomeService.swift */,
+				F47E4FBA2585F9FF009F36E8 /* ReportService.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -222,6 +237,30 @@
 				F47E4F7625855CD7009F36E8 /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F47E4FA92585E78E009F36E8 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				F47E4FAA2585E848009F36E8 /* savingFinish.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		F47E4FC82586147D009F36E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F47E4FC9258614A5009F36E8 /* budgetCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F47E4FDD25862A42009F36E8 /* Saving */ = {
+			isa = PBXGroup;
+			children = (
+				F47E4FDE25862A80009F36E8 /* SavingService.swift */,
+			);
+			path = Saving;
 			sourceTree = "<group>";
 		};
 		F4B3C30B25835300004BB9CC = {
@@ -291,6 +330,7 @@
 		F4B3C34B25835331004BB9CC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F47E4FA92585E78E009F36E8 /* Gif */,
 				F4B3C3BB2583AED3004BB9CC /* Lottie */,
 				F4B3C36825839838004BB9CC /* Font */,
 				F4B3C32025835304004BB9CC /* Assets.xcassets */,
@@ -369,6 +409,8 @@
 				F4B3C4752584B301004BB9CC /* SaveToPigVC.swift */,
 				F4B3C47A2584C4A0004BB9CC /* SaveToPigFinVC.swift */,
 				F47E4F3A25850BAD009F36E8 /* SavingDetailVC.swift */,
+				F47E4FCE25861ED1009F36E8 /* SavingTiggleVC.swift */,
+				F47E4FD325862009009F36E8 /* SavingCoinVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -387,6 +429,7 @@
 		F4B3C36425838221004BB9CC /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				F47E4FDD25862A42009F36E8 /* Saving */,
 				F47E4F6525855399009F36E8 /* Home */,
 				F47E4F562585372D009F36E8 /* APIConstants.swift */,
 				F47E4F5B25855314009F36E8 /* NetworkResult.swift */,
@@ -424,6 +467,7 @@
 		F4B3C3A62583AE42004BB9CC /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				F47E4FC82586147D009F36E8 /* Cell */,
 				F4B3C3A82583AE4E004BB9CC /* ViewController */,
 				F4B3C3A72583AE48004BB9CC /* Storyboard */,
 			);
@@ -461,6 +505,7 @@
 				F4B3C4612584AC3B004BB9CC /* savingMonthlyUseTVC.swift */,
 				F4B3C4D42584FC4C004BB9CC /* pigAmountTVC.swift */,
 				F47E4F3F258510E3009F36E8 /* savingAfterSavingTVC.swift */,
+				F47E4FD825862454009F36E8 /* savingLeftTVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -627,6 +672,7 @@
 				F4B3C3CA2583B85E004BB9CC /* SpoqaHanSansNeo-Regular.ttf in Resources */,
 				F4B3C4C22584F8DE004BB9CC /* img_1_s.png in Resources */,
 				F4B3C32125835304004BB9CC /* Assets.xcassets in Resources */,
+				F47E4FAB2585E849009F36E8 /* savingFinish.gif in Resources */,
 				F4B3C31F25835300004BB9CC /* Main.storyboard in Resources */,
 				F4B3C4C42584F8DE004BB9CC /* saving.json in Resources */,
 				F4B3C4712584B2ED004BB9CC /* SaveToPig.storyboard in Resources */,
@@ -762,17 +808,22 @@
 			files = (
 				F4B3C3B22583AE87004BB9CC /* SettingBudgetVC.swift in Sources */,
 				F4B3C3942583A834004BB9CC /* myUseTitleTVC.swift in Sources */,
+				F47E4FCA258614A5009F36E8 /* budgetCVC.swift in Sources */,
 				F47E4F3B25850BAD009F36E8 /* SavingDetailVC.swift in Sources */,
 				F4B3C3E52583E50D004BB9CC /* MonthUseVC.swift in Sources */,
 				F4B3C37C2583A6D5004BB9CC /* UIView+Extension.swift in Sources */,
+				F47E4FD925862454009F36E8 /* savingLeftTVC.swift in Sources */,
 				F4B3C31C25835300004BB9CC /* ViewController.swift in Sources */,
+				F47E4FD425862009009F36E8 /* SavingCoinVC.swift in Sources */,
 				F47E4F40258510E3009F36E8 /* savingAfterSavingTVC.swift in Sources */,
 				F4B3C47B2584C4A0004BB9CC /* SaveToPigFinVC.swift in Sources */,
 				F4B3C3602583820D004BB9CC /* HomeVC.swift in Sources */,
 				F4B3C3DB2583C8D2004BB9CC /* UseDetailVC.swift in Sources */,
 				F4B3C38F2583A827004BB9CC /* monthlyUseTVC.swift in Sources */,
 				F4B3C3EA2583FA73004BB9CC /* overCVC.swift in Sources */,
+				F47E4FDF25862A80009F36E8 /* SavingService.swift in Sources */,
 				F4B3C4762584B301004BB9CC /* SaveToPigVC.swift in Sources */,
+				F47E4FCF25861ED2009F36E8 /* SavingTiggleVC.swift in Sources */,
 				F4B3C3EF2583FDBB004BB9CC /* categoryUseTVC.swift in Sources */,
 				F4B3C3F4258407CF004BB9CC /* SavingVC.swift in Sources */,
 				F4B3C38A2583A813004BB9CC /* dDayTVC.swift in Sources */,
@@ -787,6 +838,7 @@
 				F4B3C37725839992004BB9CC /* UIColor+Extension.swift in Sources */,
 				F47E4F67258553B7009F36E8 /* HomeService.swift in Sources */,
 				F47E4F572585372E009F36E8 /* APIConstants.swift in Sources */,
+				F47E4FBB2585F9FF009F36E8 /* ReportService.swift in Sources */,
 				F4B3C4B92584E81B004BB9CC /* PageVC.swift in Sources */,
 				F4B3C4D52584FC4C004BB9CC /* pigAmountTVC.swift in Sources */,
 				F4B3C46C2584B13F004BB9CC /* SavingMainVC.swift in Sources */,

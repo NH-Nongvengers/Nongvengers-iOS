@@ -11,6 +11,7 @@ struct APIConstants {
     static let BaseURL = "http://3.35.251.129:3000"
     
     /* 홈 */
+    static let monthlyReportURL = BaseURL + "/api/plan"
     static let homeMonthlyURL = BaseURL + "/api/plan/status"
     static let homeCategoryURL = BaseURL + "/api/plan/category"
     

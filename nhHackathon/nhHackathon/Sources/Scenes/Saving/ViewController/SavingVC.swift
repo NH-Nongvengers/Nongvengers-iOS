@@ -11,15 +11,7 @@ class SavingVC: UIViewController {
 
     //MARK: - Init
     
-    
-    @IBOutlet weak var imageView: UIView! {
-        didSet {
-            self.imageView.roundTopCorners(cornerRadius: 62)
-        }
-    }
     @IBOutlet weak var saveAmountLabel: UILabel!
-    
-    @IBOutlet weak var imageViewConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var textView: UIView! {
         didSet {
@@ -74,9 +66,36 @@ class SavingVC: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SavingFinVC") as! SavingFinVC
+        guard let amount = self.textField.text else { return }
         
-        present(vc, animated: true, completion: nil)
+        SavingService.shared.saveSaving(amount, 3) { data in
+            switch data {
+                
+            case .success(let res) :
+                print("절약 저축 성공")
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SavingFinVC") as! SavingFinVC
+                print("=== POST: 절약 저축 ===")
+                
+                let totalAmount = res as! DataClass
+                
+                vc.totalSave = String(totalAmount.total)
+                
+                self.present(vc, animated: true, completion: nil)
+                
+            case .requestErr(let msg):
+                print("절약 저축 requestErr")
+                print(msg)
+            case .pathErr:
+                print("절약 저축 pathErr")
+            case .serverErr:
+                print("절약 저축 serverErr")
+            case .networkFail:
+                print("절약 저축 networkFail")
+            case .dbErr:
+                print("절약 저축 dbErr")
+            }
+        }
         
     }
     
@@ -137,15 +156,6 @@ extension SavingVC: UIGestureRecognizerDelegate {
             keyboardHeight = keyboardFrame.cgRectValue.height
         }
         
-        // animation
-        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            
-            // +로 갈수록 y값이 내려가고 -로 갈수록 y값이 올라간다.
-            self.imageViewConstraint.constant = 233
-            //121
-            
-        })
-        
         self.view.layoutIfNeeded()
     }
     
@@ -153,11 +163,6 @@ extension SavingVC: UIGestureRecognizerDelegate {
     @objc func keyboardWillHide(_ notification: NSNotification) {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
-        UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            
-            self.imageViewConstraint.constant = 0
-            
-        })
         
         self.view.layoutIfNeeded()
     }
@@ -174,3 +179,4 @@ extension SavingVC: UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
+

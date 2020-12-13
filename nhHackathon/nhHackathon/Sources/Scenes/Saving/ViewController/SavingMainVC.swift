@@ -21,7 +21,7 @@ class SavingMainVC: UIViewController {
         }
     }
     @IBOutlet weak var pigTableView: UITableView!
-    
+    var saveAmountList: [String] = []
     
     @IBOutlet weak var pigFillView: UIView! {
         didSet {
@@ -41,6 +41,7 @@ class SavingMainVC: UIViewController {
     
     @IBOutlet weak var pigAmountLabel: UILabel!
     
+    var pigAmount: String = ""
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -57,9 +58,14 @@ class SavingMainVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setAnimation()
+        
         self.pigTableView.dataSource = self
         self.pigTableView.delegate = self
+        
+        getSavingMain()
+        
     }
     
     //MARK: - Action
@@ -103,6 +109,37 @@ extension SavingMainVC: UITableViewDataSource {
         
         cell.titleLabel.text = titleList[indexPath.row]
         
+        
+        SavingService.shared.getMainSaving() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                let data = res as! SaveMain
+                
+                self?.saveAmountList = [String(data.saved), String(data.changes), String(data.coin)]
+                cell.amountLabel.text = self?.saveAmountList[indexPath.row]
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
+        
+        
+        
         return cell
         
     }
@@ -117,11 +154,59 @@ extension SavingMainVC: UITableViewDelegate {
         
         let sb = UIStoryboard.init(name: "SavingDetail", bundle: nil)
         
-        let dvc = sb.instantiateViewController(withIdentifier: "SavingDetailVC") as! SavingDetailVC
+        if indexPath.row == 0 {
+            
+            let dvc = sb.instantiateViewController(withIdentifier: "SavingDetailVC") as! SavingDetailVC
+            
+            print("CLICKED: 카테고리 Cell")
+            
+            self.present(dvc, animated: true)
+        } else if indexPath.row == 1 {
+            
+            let dvc = sb.instantiateViewController(withIdentifier: "SavingTiggleVC") as! SavingTiggleVC
+            
+            print("CLICKED: 카테고리 Cell")
+            
+            self.present(dvc, animated: true)
+        } else {
+            
+            let dvc = sb.instantiateViewController(withIdentifier: "SavingCoinVC") as! SavingCoinVC
+            
+            print("CLICKED: 카테고리 Cell")
+            
+            self.present(dvc, animated: true)
+        }
         
-        print("CLICKED: 카테고리 Cell")
-        
-        self.present(dvc, animated: true)
-        
+    }
+}
+
+extension SavingMainVC {
+    func getSavingMain() {
+        SavingService.shared.getMainSaving() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                let data = res as! SaveMain
+                
+                self?.pigAmountLabel.text = String(data.sum) + "원"
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
     }
 }

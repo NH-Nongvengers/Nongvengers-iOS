@@ -22,6 +22,7 @@ class SavingFinVC: UIViewController {
     
     @IBOutlet weak var totalSaveLabel: UILabel!
     
+    var totalSave: String = ""
     
     var monthlyUseList: [MonthlyUse] = [MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 11, usage: 600000), MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 10, usage: 600000), MonthlyUse(month: 9, usage: 600000)]
     
@@ -44,7 +45,7 @@ class SavingFinVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.totalSaveLabel.text = "총 " + totalSave + "원"
         
     }
 
@@ -57,6 +58,8 @@ class SavingFinVC: UIViewController {
         
         print("CLICKED: 저축하기 완료 VC")
     }
+    
+    
     
     
 }

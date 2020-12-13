@@ -22,7 +22,7 @@
         <!--MonthUseVC-->
         <scene sceneID="r6G-0G-0Cu">
             <objects>
-                <viewController storyboardIdentifier="MonthUseVC" title="MonthUseVC" id="EMj-QD-cO0" customClass="MonthUseVC" customModule="nhHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonthUseVC" title="MonthUseVC" modalPresentationStyle="fullScreen" id="EMj-QD-cO0" customClass="MonthUseVC" customModule="nhHackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Hv-en-Sf7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnReportDownarrow" translatesAutoresizingMaskIntoConstraints="NO" id="T7g-ax-ro9">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnReportNarrow" translatesAutoresizingMaskIntoConstraints="NO" id="T7g-ax-ro9">
                                                 <rect key="frame" x="119" y="5" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="M4L-FD-Mpo"/>
@@ -547,7 +547,7 @@
     </scenes>
     <resources>
         <image name="btnCloseWhite" width="20" height="20"/>
-        <image name="btnReportDownarrow" width="20" height="20"/>
+        <image name="btnReportNarrow" width="20" height="20"/>
         <image name="imgReportReceipt" width="361" height="225"/>
     </resources>
 </document>

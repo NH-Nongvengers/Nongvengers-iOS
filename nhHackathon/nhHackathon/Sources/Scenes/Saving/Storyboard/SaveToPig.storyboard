@@ -186,7 +186,7 @@
         <!--SaveToPigFinVC-->
         <scene sceneID="YxR-dr-jkv">
             <objects>
-                <viewController storyboardIdentifier="SaveToPigFinVC" title="SaveToPigFinVC" id="YD6-4W-D8L" customClass="SaveToPigFinVC" customModule="nhHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SaveToPigFinVC" title="SaveToPigFinVC" modalPresentationStyle="fullScreen" id="YD6-4W-D8L" customClass="SaveToPigFinVC" customModule="nhHackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cWv-Z5-dQe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,17 +230,26 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7G-eV-ctH">
                                 <rect key="frame" x="18" y="168" width="339" height="353"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-b7-PZm">
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="353"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="339" id="6V2-PQ-r5j"/>
+                                    <constraint firstAttribute="bottom" secondItem="FIW-b7-PZm" secondAttribute="bottom" id="GkR-hh-uLr"/>
+                                    <constraint firstItem="FIW-b7-PZm" firstAttribute="leading" secondItem="S7G-eV-ctH" secondAttribute="leading" id="GwV-3B-0ZA"/>
                                     <constraint firstAttribute="height" constant="353" id="OAf-eQ-t8F"/>
+                                    <constraint firstItem="FIW-b7-PZm" firstAttribute="top" secondItem="S7G-eV-ctH" secondAttribute="top" id="XKQ-sv-8Sr"/>
+                                    <constraint firstAttribute="trailing" secondItem="FIW-b7-PZm" secondAttribute="trailing" id="ccv-JP-ZhN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5D-7g-Q30">
                                 <rect key="frame" x="25" y="572" width="325" height="89"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4j-Lh-Hjn">
-                                        <rect key="frame" x="90.666666666666671" y="15" width="62.000000000000014" height="24"/>
+                                        <rect key="frame" x="82" y="15" width="66.333333333333314" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1MG-nS-9lJ"/>
                                         </constraints>
@@ -249,7 +258,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 추가되어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmN-5X-JyP">
-                                        <rect key="frame" x="152.66666666666666" y="15" width="92.333333333333343" height="24"/>
+                                        <rect key="frame" x="148.33333333333334" y="15" width="96.666666666666657" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="4ux-ae-5de"/>
                                         </constraints>
@@ -258,7 +267,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 12,000원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRw-mO-tDj">
-                                        <rect key="frame" x="70.333333333333343" y="50" width="101.33333333333334" height="24"/>
+                                        <rect key="frame" x="61.333333333333329" y="50" width="105.99999999999999" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="30Y-3c-JYN"/>
                                         </constraints>
@@ -267,7 +276,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 모였어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ws5-aK-4Rk">
-                                        <rect key="frame" x="171.66666666666666" y="50" width="92.333333333333343" height="24"/>
+                                        <rect key="frame" x="167.33333333333334" y="50" width="96.666666666666657" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="iIX-d3-pOU"/>
                                         </constraints>
@@ -289,7 +298,6 @@
                                     <constraint firstItem="gRw-mO-tDj" firstAttribute="top" secondItem="wmN-5X-JyP" secondAttribute="bottom" constant="11" id="htj-UG-BpH"/>
                                     <constraint firstItem="gRw-mO-tDj" firstAttribute="top" secondItem="m4j-Lh-Hjn" secondAttribute="bottom" constant="11" id="thR-Wa-UtB"/>
                                     <constraint firstItem="ws5-aK-4Rk" firstAttribute="leading" secondItem="gRw-mO-tDj" secondAttribute="trailing" id="xL8-rU-SgZ"/>
-                                    <constraint firstItem="ws5-aK-4Rk" firstAttribute="top" secondItem="wmN-5X-JyP" secondAttribute="bottom" constant="11" id="ztM-WQ-JCd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ers-hp-qzk">
@@ -333,15 +341,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAmountLabel" destination="m4j-Lh-Hjn" id="19X-d2-7hM"/>
                         <outlet property="animationView" destination="S7G-eV-ctH" id="peI-yS-7Ni"/>
                         <outlet property="announceLabel" destination="KIz-Xx-YSx" id="tCM-BF-Z8J"/>
                         <outlet property="announceView" destination="Z5D-7g-Q30" id="OJN-NS-u6c"/>
                         <outlet property="finishButton" destination="Ers-hp-qzk" id="rCt-Wv-fhz"/>
+                        <outlet property="gifView" destination="FIW-b7-PZm" id="Wa8-u4-LDr"/>
+                        <outlet property="totalAmountLabel" destination="gRw-mO-tDj" id="RtJ-XP-Qmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSN-qu-XoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646" y="81"/>
+            <point key="canvasLocation" x="645.60000000000002" y="80.541871921182263"/>
         </scene>
     </scenes>
     <resources>

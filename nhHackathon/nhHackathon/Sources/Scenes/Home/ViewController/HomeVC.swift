@@ -8,23 +8,19 @@
 import UIKit
 import Lottie
 
-// MARK: TEST STRUCT
-struct myUse {
-    var category : String
-    var left: Int
-    var use: Int
-    var image: String
-}
-
-
 class HomeVC: UIViewController {
     
     // MARK: - Init
     
     var homeMonthlyBudget: monthlyBudget?
     var categoryList: [Category] = []
-    var categoryImage: [String] = []
-    var myUseList : [myUse] = [myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: "")]
+    var categoryImage: [String] = ["iconFood", "iconShopping", "iconLife", "iconBeer", "iconBeauty", "iconCoffee", "iconTravel", "iconCall", "iconMore"]
+    
+    var dDay: String = ""
+    var amountUsed: String = ""
+    var balance: String = ""
+    var budget: String = ""
+    var month: String = ""
     
     @IBOutlet weak var homeTableView: UITableView!
     
@@ -92,11 +88,18 @@ extension HomeVC : UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dDayTVC") as! dDayTVC
             
+            cell.dDayLabel.text = "D-" + dDay
+            
             return cell
             
         } else if indexPath.section == 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "monthlyUseTVC") as! monthlyUseTVC
+            
+            cell.monthLabel.text = month + "월 사용금액"
+            cell.availableLabel.text = balance + "원"
+            cell.budgetLabel.text = budget + "원"
+            cell.monthlyUseLabel.text = amountUsed + "원"
             
             return cell
             
@@ -113,7 +116,12 @@ extension HomeVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myUseTVC") as! myUseTVC
         
         cell.categoryLabel.text = categoryList[indexPath.row].categoryName
-        cell.leftLabel
+        cell.leftLabel.text = String(categoryList[indexPath.row].balance) + "원"
+        cell.percentLabel.text = String(categoryList[indexPath.row].percent) + "%"
+        cell.useLabel.text = String(categoryList[indexPath.row].budget) + "원"
+        
+        cell.categoryImage.image = UIImage(named: categoryImage[indexPath.row])
+        
         
         return cell
         
@@ -157,6 +165,7 @@ extension HomeVC: UITableViewDelegate {
 
 
 extension HomeVC {
+    
     func getMonthlyBudget() {
         HomeService.shared.getHomeMonthly() {
             [weak self]
@@ -170,7 +179,16 @@ extension HomeVC {
                 
                 print("==test===")
                 print(self?.homeMonthlyBudget)
+                print(self?.homeMonthlyBudget?.dDay)
                 
+                self?.dDay = String((self?.homeMonthlyBudget!.dDay)!)
+                self?.amountUsed = String(self!.homeMonthlyBudget!.amountUsed)
+                self?.balance = String(self!.homeMonthlyBudget!.balance)
+                self?.budget = String(self!.homeMonthlyBudget!.budget)
+                self?.month = String(self!.homeMonthlyBudget!.month)
+                
+                self?.homeTableView.reloadData()
+            
             case .requestErr( _):
                 print(".requestErr")
                 break
@@ -186,8 +204,7 @@ extension HomeVC {
             }
         }
     }
-    
-    
+
     func getCategory() {
         HomeService.shared.getHomeCategory() {
             [weak self]

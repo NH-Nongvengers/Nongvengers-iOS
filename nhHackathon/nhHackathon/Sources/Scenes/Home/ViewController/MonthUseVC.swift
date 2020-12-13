@@ -11,7 +11,10 @@ class MonthUseVC: UIViewController {
 
     
     //MARK: - Init
-    var categoryUseList : [myUse] = [myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: "")]
+    var categoryUseList : [String] = [""]
+    
+    var report: Report?
+    
     
     @IBOutlet weak var reportTableView: UITableView!
     
@@ -19,6 +22,36 @@ class MonthUseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.reportTableView.dataSource = self
+        
+        /* Network */
+        ReportService.shared.getReportDetail(planIdx: 1) {
+            [weak self]
+            data in
+            guard let `self` = self else { return }
+            switch data{
+            case .success(let res) :
+                self.report = res as? Report
+                
+                print("==== 리포트 상세 통신 ====")
+                
+                print(self.report?.result)
+                print(self.report?.summary)
+                print(self.report?.overConsumption)
+                
+                
+            case .requestErr(_):
+                print("request err")
+            case .pathErr:
+                print("path err")
+            case .serverErr:
+                print("server err")
+            case .networkFail:
+                print("network err")
+            case .dbErr:
+                print("db err")
+            }
+        }
+        
     }
     
     //MARK: - Action
@@ -76,3 +109,5 @@ extension MonthUseVC : UITableViewDataSource {
     
 }
 
+extension MonthUseVC {
+}
