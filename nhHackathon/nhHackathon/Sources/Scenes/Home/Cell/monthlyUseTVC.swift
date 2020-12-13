@@ -11,6 +11,8 @@ import Lottie
 class monthlyUseTVC: UITableViewCell {
 
     // MARK: - Init
+    
+    
     @IBOutlet weak var monthlyUseView: UIView! {
         didSet {
             self.monthlyUseView.makeRounded(cornerRadius: 10)
@@ -20,11 +22,20 @@ class monthlyUseTVC: UITableViewCell {
     
     @IBOutlet weak var monthLabel: UILabel!
     
-    @IBOutlet weak var monthlyUseLabel: UILabel!
+    @IBOutlet weak var monthlyUseLabel: UILabel! {
+        didSet {
+        }
+    }
     
-    @IBOutlet weak var budgetLabel: UILabel!
+    @IBOutlet weak var budgetLabel: UILabel! {
+        didSet {
+        }
+    }
     
-    @IBOutlet weak var availableLabel: UILabel!
+    @IBOutlet weak var availableLabel: UILabel! {
+        didSet {
+        }
+    }
     
     @IBOutlet weak var animationView: UIView!
     
@@ -32,6 +43,8 @@ class monthlyUseTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         setAnimation()
+        
+        
     }
 
     // MARK: - Action

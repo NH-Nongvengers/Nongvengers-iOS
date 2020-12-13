@@ -16,10 +16,14 @@ struct myUse {
     var image: String
 }
 
+
 class HomeVC: UIViewController {
     
     // MARK: - Init
     
+    var homeMonthlyBudget: monthlyBudget?
+    var categoryList: [Category] = []
+    var categoryImage: [String] = []
     var myUseList : [myUse] = [myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: ""), myUse(category: "식비", left: 160000, use: 300000, image: "")]
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -62,9 +66,8 @@ class HomeVC: UIViewController {
         self.homeTableView.dataSource = self
         self.homeTableView.delegate = self
         
-        //setPageViewController()
-        
-        
+        getMonthlyBudget()
+        getCategory()
     }
     
 }
@@ -79,7 +82,7 @@ extension HomeVC : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 3 {
-            return myUseList.count
+            return categoryList.count
         } else {
             return 1
         }
@@ -109,6 +112,8 @@ extension HomeVC : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myUseTVC") as! myUseTVC
         
+        cell.categoryLabel.text = categoryList[indexPath.row].categoryName
+        cell.leftLabel
         
         return cell
         
@@ -146,6 +151,71 @@ extension HomeVC: UITableViewDelegate {
             self.lastUseButton.transform = CGAffineTransform.identity
         }
         print("scroll end!")
+    }
+    
+}
+
+
+extension HomeVC {
+    func getMonthlyBudget() {
+        HomeService.shared.getHomeMonthly() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                self?.homeMonthlyBudget = res as? monthlyBudget
+                
+                print("==test===")
+                print(self?.homeMonthlyBudget)
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
+    }
+    
+    
+    func getCategory() {
+        HomeService.shared.getHomeCategory() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                self?.categoryList = res as! [Category]
+                self?.homeTableView.reloadData()
+                print("===Home: 카테고리===")
+                print(self?.categoryList)
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
     }
     
 }
