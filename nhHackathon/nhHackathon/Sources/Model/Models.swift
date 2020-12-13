@@ -53,3 +53,8 @@ struct Summary: Codable {
 struct SaveMain: Codable {
     let sum, saved, changes, coin: Int
 }
+
+struct MonthlySave: Codable {
+    let planIdx: Int
+    let amount, period: String
+}

@@ -423,6 +423,9 @@
                                 <state key="normal" title="자동 저축 설정하기" image="iconSavingNextarrowPink">
                                     <color key="titleColor" red="1" green="0.5450980392" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="autoSave:" destination="WDo-Bo-zof" eventType="touchUpInside" id="jBS-Bg-yUp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pkO-31-Dcm"/>
@@ -451,6 +454,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="autoSaveButton" destination="gMI-mF-6y1" id="fFF-fk-oIC"/>
                         <outlet property="tiggleTableView" destination="43d-Oo-7e9" id="rmU-nO-G9T"/>
                     </connections>
                 </viewController>

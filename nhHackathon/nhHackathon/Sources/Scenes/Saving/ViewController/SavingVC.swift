@@ -79,7 +79,7 @@ class SavingVC: UIViewController {
                 
                 let totalAmount = res as! DataClass
                 
-                vc.totalSave = String(totalAmount.total)
+                vc.totalAmount = String(totalAmount.total).insertComma
                 
                 self.present(vc, animated: true, completion: nil)
                 

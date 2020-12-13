@@ -9,22 +9,17 @@ import UIKit
 
 /**TEST STRUCT*/
 
-struct MonthlyUse {
-    var month: Int
-    var usage: Int
-}
 
 class SavingFinVC: UIViewController {
 
     //MARK: - Init
     
+    var getData: [MonthlySave] = []
+    
     @IBOutlet weak var monthlySaveLabel: UILabel!
     
     @IBOutlet weak var totalSaveLabel: UILabel!
-    
-    var totalSave: String = ""
-    
-    var monthlyUseList: [MonthlyUse] = [MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 11, usage: 600000), MonthlyUse(month: 12, usage: 600000), MonthlyUse(month: 10, usage: 600000), MonthlyUse(month: 9, usage: 600000)]
+    var totalAmount: String = ""
     
     @IBOutlet weak var monthlySaveTableView: UITableView! {
         didSet {
@@ -45,8 +40,10 @@ class SavingFinVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.totalSaveLabel.text = "총 " + totalSave + "원"
         
+        getMonthlySaving()
+        
+        totalSaveLabel.text = DecimalWon(value: Int(totalAmount)!) + "원"
     }
 
     //MARK: - Action
@@ -59,7 +56,12 @@ class SavingFinVC: UIViewController {
         print("CLICKED: 저축하기 완료 VC")
     }
     
-    
+    func DecimalWon(value: Int) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))!
+        return result
+    }
     
     
 }
@@ -85,22 +87,61 @@ extension SavingFinVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return monthlyUseList.count
+        return getData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "savingMonthlyUseTVC") as! savingMonthlyUseTVC
+        let monthString = getData[indexPath.row].period
         
-        let data = monthlyUseList[indexPath.row]
+        let startIdx: String.Index = monthString.index(monthString.startIndex, offsetBy: 5)
+        let result = String(monthString[startIdx...])
         
-        cell.monthLabel.text = String(data.month) + "월"
+        cell.monthLabel.text = result + "월"
         
-        cell.useLabel.text = String(data.usage)
+        cell.useLabel.text = DecimalWon(value: Int(getData[indexPath.row].amount)!)
         
         return cell
         
     }
     
     
+}
+
+extension SavingFinVC {
+    func getMonthlySaving() {
+        SavingService.shared.getMonthlySaving() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                let data = res as! [MonthlySave]
+                
+                self?.getData = res as! [MonthlySave]
+                
+                self?.monthlySaveLabel.text = "총 " + self!.DecimalWon(value: Int(data[0].amount)!) + "원"
+                
+                self?.monthlySaveTableView.dataSource = self
+                self?.monthlySaveTableView.reloadData()
+                
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
+    }
 }

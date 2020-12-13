@@ -113,10 +113,10 @@ struct HomeService {
                     print(err.localizedDescription)
                     completion(.networkFail)
                     break
+                    
                 }
             }
         
     }
-    
     
 }
