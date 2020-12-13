@@ -43,7 +43,7 @@ class SavingFinVC: UIViewController {
         
         getMonthlySaving()
         
-        totalSaveLabel.text = DecimalWon(value: Int(totalAmount)!) + "원"
+        totalSaveLabel.text = DecimalWon(value: Int(totalAmount) ?? 0) + "원"
     }
 
     //MARK: - Action
@@ -55,14 +55,6 @@ class SavingFinVC: UIViewController {
         
         print("CLICKED: 저축하기 완료 VC")
     }
-    
-    func DecimalWon(value: Int) -> String{
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        let result = numberFormatter.string(from: NSNumber(value: value))!
-        return result
-    }
-    
     
 }
 

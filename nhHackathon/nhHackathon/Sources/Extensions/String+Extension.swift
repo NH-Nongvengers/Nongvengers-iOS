@@ -6,11 +6,24 @@
 //
 
 import Foundation
+import UIKit
 
-extension String {
-    var insertComma: String {
+extension UIViewController {
+    
+    func DecimalWon(value: Int) -> String{
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        return self
+        let result = numberFormatter.string(from: NSNumber(value: value))!
+        return result
+    }
+    
+}
+
+extension UITableViewCell {
+    func changeToWon(value: Int) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))!
+        return result
     }
 }

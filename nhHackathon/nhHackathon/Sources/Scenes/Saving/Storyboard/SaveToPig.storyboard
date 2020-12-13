@@ -345,14 +345,14 @@
                         <outlet property="animationView" destination="S7G-eV-ctH" id="peI-yS-7Ni"/>
                         <outlet property="announceLabel" destination="KIz-Xx-YSx" id="tCM-BF-Z8J"/>
                         <outlet property="announceView" destination="Z5D-7g-Q30" id="OJN-NS-u6c"/>
-                        <outlet property="finishButton" destination="Ers-hp-qzk" id="rCt-Wv-fhz"/>
+                        <outlet property="finishButton" destination="Ers-hp-qzk" id="q8W-GR-uC4"/>
                         <outlet property="gifView" destination="FIW-b7-PZm" id="Wa8-u4-LDr"/>
                         <outlet property="totalAmountLabel" destination="gRw-mO-tDj" id="RtJ-XP-Qmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSN-qu-XoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645.60000000000002" y="80.541871921182263"/>
+            <point key="canvasLocation" x="689" y="50"/>
         </scene>
     </scenes>
     <resources>

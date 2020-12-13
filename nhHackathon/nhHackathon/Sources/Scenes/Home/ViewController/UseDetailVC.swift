@@ -21,6 +21,12 @@ class UseDetailVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var categorySettingView: onlyLeftRoundView! {
+        didSet {
+            self.categorySettingView.backgroundColor = .salmon
+        }
+    }
+    
     @IBOutlet weak var monthLabel: UILabel!
     
     @IBOutlet weak var totalLabel: UILabel!
@@ -32,8 +38,12 @@ class UseDetailVC: UIViewController {
     @IBOutlet weak var monthlyHistoryTableView: UITableView!
     
     
+    var monthDetail: MonthDetailData?
+    
+    
     var payment : [String] = []
     
+    var idx: Int = 0
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -42,6 +52,8 @@ class UseDetailVC: UIViewController {
         
         self.monthlyHistoryTableView.dataSource = self
         self.monthlyHistoryTableView.delegate = self
+        
+        getUseDetail()
         
     }
     
@@ -128,4 +140,42 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
         
     }
     
+}
+
+extension UseDetailVC {
+    func getUseDetail() {
+        ReportService.shared.getUseDetail(planIdx: 1, idx: idx) {
+            [weak self]
+            data in
+            guard let `self` = self else { return }
+            switch data{
+            case .success(let res) :
+                
+                print("====== 소비 상세 TOTAL ======")
+                print(res)
+                
+                self.monthDetail = res as? MonthDetailData
+                
+                self.monthLabel.text = String(self.monthDetail!.month) + "월"
+                
+                self.categoryImageView.image = UIImage(named: categoryImage[(self.monthDetail?.amountOfCategory.categoryIdx)! - 1])
+                self.categoryLabel.text = (self.monthDetail?.amountOfCategory.categoryName)! + " 총 금액"
+                self.totalLabel.text = self.DecimalWon(value: (self.monthDetail?.amountOfCategory.balance)!) + "원"
+                
+                print("==== 소비 상세 쪼개기 3 =====")
+                print(self.monthDetail?.transactionDetails)
+                
+            case .requestErr(_):
+                print("request err")
+            case .pathErr:
+                print("path err")
+            case .serverErr:
+                print("server err")
+            case .networkFail:
+                print("network err")
+            case .dbErr:
+                print("db err")
+            }
+        }
+    }
 }

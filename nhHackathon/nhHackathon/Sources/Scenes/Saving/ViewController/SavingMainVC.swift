@@ -14,6 +14,8 @@ class SavingMainVC: UIViewController {
     
     let titleList: [String] = ["절약 후 저축 금액", "티끌 모으기", "잔돈 모으기"]
     
+    var saveData: SaveMain?
+    
     @IBOutlet weak var putCoinButton: UIButton! {
         didSet {
             self.putCoinButton.backgroundColor = .salmon
@@ -61,7 +63,7 @@ class SavingMainVC: UIViewController {
         
         setAnimation()
         
-        self.pigTableView.dataSource = self
+        //self.pigTableView.dataSource = self
         self.pigTableView.delegate = self
         
         getSavingMain()
@@ -109,36 +111,7 @@ extension SavingMainVC: UITableViewDataSource {
         
         cell.titleLabel.text = titleList[indexPath.row]
         
-        
-        SavingService.shared.getMainSaving() {
-            [weak self]
-            data in
-            
-            switch data {
-                
-            case .success(let res):
-                
-                let data = res as! SaveMain
-                
-                self?.saveAmountList = [String(data.saved), String(data.changes), String(data.coin)]
-                cell.amountLabel.text = self?.saveAmountList[indexPath.row]
-                
-            case .requestErr( _):
-                print(".requestErr")
-                break
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print(".serverErr")
-            case .networkFail:
-                print(".networkFail")
-            case .dbErr:
-                print("db error")
-                
-            }
-        }
-        
-        
+        cell.amountLabel.text = saveAmountList[indexPath.row]
         
         return cell
         
@@ -190,9 +163,14 @@ extension SavingMainVC {
                 
             case .success(let res):
                 
-                let data = res as! SaveMain
+                self?.saveData = res as? SaveMain
                 
-                self?.pigAmountLabel.text = String(data.sum) + "원"
+                self?.pigAmountLabel.text = self!.DecimalWon(value: (self?.saveData!.sum)!) + "원"
+                
+                self?.saveAmountList = [self!.DecimalWon(value: (self?.saveData!.saved)!), self!.DecimalWon(value: (self?.saveData!.changes)!), self!.DecimalWon(value: (self?.saveData!.coin)!)]
+                
+                self?.pigTableView.dataSource = self
+                self?.pigTableView.reloadData()
                 
             case .requestErr( _):
                 print(".requestErr")

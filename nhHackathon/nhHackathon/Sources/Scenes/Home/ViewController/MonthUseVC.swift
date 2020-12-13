@@ -11,9 +11,23 @@ class MonthUseVC: UIViewController {
 
     
     //MARK: - Init
-    var categoryUseList : [String] = [""]
-    
+    var categoryUseList : [OverConsumption] = []
     var report: Report?
+    
+    @IBOutlet weak var topSetView: UIView! {
+        didSet {
+            self.topSetView.backgroundColor = .salmon
+        }
+    }
+    @IBOutlet weak var budgetLabel: UILabel!
+    @IBOutlet weak var amountUsedLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel! {
+        didSet {
+            self.balanceLabel.textColor = .aquaMarine
+        }
+    }
+    
+    
     
     
     @IBOutlet weak var reportTableView: UITableView!
@@ -21,36 +35,8 @@ class MonthUseVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.reportTableView.dataSource = self
-        
-        /* Network */
-        ReportService.shared.getReportDetail(planIdx: 1) {
-            [weak self]
-            data in
-            guard let `self` = self else { return }
-            switch data{
-            case .success(let res) :
-                self.report = res as? Report
-                
-                print("==== 리포트 상세 통신 ====")
-                
-                print(self.report?.result)
-                print(self.report?.summary)
-                print(self.report?.overConsumption)
-                
-                
-            case .requestErr(_):
-                print("request err")
-            case .pathErr:
-                print("path err")
-            case .serverErr:
-                print("server err")
-            case .networkFail:
-                print("network err")
-            case .dbErr:
-                print("db err")
-            }
-        }
+        // self.reportTableView.dataSource = self
+        getData()
         
     }
     
@@ -102,6 +88,11 @@ extension MonthUseVC : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCategoryUseTVC") as! myUseTVC
         
+        cell.categoryImage.image = UIImage(named: categoryImage[indexPath.row])
+        cell.categoryLabel.text = categoryUseList[indexPath.row].categoryName
+        cell.leftLabel.text = DecimalWon(value: categoryUseList[indexPath.row].balance!)
+        cell.percentLabel.text = String(categoryUseList[indexPath.row].percent) + "%"
+        cell.useLabel.text = DecimalWon(value: categoryUseList[indexPath.row].budget) + "원"
         
         return cell
         
@@ -110,4 +101,36 @@ extension MonthUseVC : UITableViewDataSource {
 }
 
 extension MonthUseVC {
+    func getData() {
+        ReportService.shared.getReportDetail(planIdx: 1) {
+            [weak self]
+            data in
+            guard let `self` = self else { return }
+            switch data{
+            case .success(let res) :
+                
+                self.report = res as? Report
+                
+                self.budgetLabel.text = self.DecimalWon(value: (self.report?.summary.budget)!) + "원"
+                self.amountUsedLabel.text = self.DecimalWon(value: (self.report?.summary.amountUsed)!) + "원"
+                self.balanceLabel.text = self.DecimalWon(value: (self.report?.summary.balance)!) + "원"
+                
+                self.categoryUseList = self.report!.result
+                
+                self.reportTableView.dataSource = self
+                self.reportTableView.reloadData()
+                
+            case .requestErr(_):
+                print("request err")
+            case .pathErr:
+                print("path err")
+            case .serverErr:
+                print("server err")
+            case .networkFail:
+                print("network err")
+            case .dbErr:
+                print("db err")
+            }
+        }
+    }
 }

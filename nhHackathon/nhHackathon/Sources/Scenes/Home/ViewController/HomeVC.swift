@@ -8,13 +8,14 @@
 import UIKit
 import Lottie
 
+var categoryImage: [String] = ["iconFood", "iconShopping", "iconLife", "iconBeer", "iconBeauty", "iconCoffee", "iconTravel", "iconCall", "iconMore"]
+
 class HomeVC: UIViewController {
     
     // MARK: - Init
     
     var homeMonthlyBudget: monthlyBudget?
     var categoryList: [Category] = []
-    var categoryImage: [String] = ["iconFood", "iconShopping", "iconLife", "iconBeer", "iconBeauty", "iconCoffee", "iconTravel", "iconCall", "iconMore"]
     
     var dDay: String = ""
     var amountUsed: String = ""
@@ -66,6 +67,9 @@ class HomeVC: UIViewController {
         getCategory()
     }
     
+    
+    
+    
 }
 
 // MARK: - Extension
@@ -100,7 +104,7 @@ extension HomeVC : UITableViewDataSource {
             cell.availableLabel.text = balance + "원"
             cell.budgetLabel.text = budget + "원"
             cell.monthlyUseLabel.text = amountUsed + "원"
-            
+
             return cell
             
         } else if indexPath.section == 2 {
@@ -116,12 +120,13 @@ extension HomeVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myUseTVC") as! myUseTVC
         
         cell.categoryLabel.text = categoryList[indexPath.row].categoryName
-        cell.leftLabel.text = String(categoryList[indexPath.row].balance) + "원"
+        cell.leftLabel.text = DecimalWon(value: categoryList[indexPath.row].balance) + "원"
         cell.percentLabel.text = String(categoryList[indexPath.row].percent) + "%"
-        cell.useLabel.text = String(categoryList[indexPath.row].budget) + "원"
+        cell.useLabel.text = DecimalWon(value: categoryList[indexPath.row].budget) + "원"
         
         cell.categoryImage.image = UIImage(named: categoryImage[indexPath.row])
         
+        cell.index = categoryList[indexPath.row].categoryIdx
         
         return cell
         
@@ -141,6 +146,8 @@ extension HomeVC: UITableViewDelegate {
             }
             
             print("CLICKED: 카테고리 Cell")
+            
+            dvc.idx = categoryList[indexPath.row].categoryIdx
             
             dvc.modalPresentationStyle = .fullScreen
             
@@ -177,14 +184,10 @@ extension HomeVC {
                 
                 self?.homeMonthlyBudget = res as? monthlyBudget
                 
-                print("==test===")
-                print(self?.homeMonthlyBudget)
-                print(self?.homeMonthlyBudget?.dDay)
-                
                 self?.dDay = String((self?.homeMonthlyBudget!.dDay)!)
-                self?.amountUsed = String(self!.homeMonthlyBudget!.amountUsed)
-                self?.balance = String(self!.homeMonthlyBudget!.balance)
-                self?.budget = String(self!.homeMonthlyBudget!.budget)
+                self?.amountUsed = self!.DecimalWon(value: self!.homeMonthlyBudget!.amountUsed)
+                self?.balance = self!.DecimalWon(value: self!.homeMonthlyBudget!.balance)
+                self?.budget = self!.DecimalWon(value:self!.homeMonthlyBudget!.budget)
                 self?.month = String(self!.homeMonthlyBudget!.month)
                 
                 self?.homeTableView.reloadData()

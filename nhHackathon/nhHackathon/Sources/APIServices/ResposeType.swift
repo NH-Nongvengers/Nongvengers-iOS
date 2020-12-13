@@ -33,3 +33,5 @@ struct ResponseString: Codable {
 struct DataClass: Codable {
     let total: String
 }
+
+

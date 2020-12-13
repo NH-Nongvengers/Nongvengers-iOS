@@ -12,7 +12,7 @@ class SavingVC: UIViewController {
     //MARK: - Init
     
     @IBOutlet weak var saveAmountLabel: UILabel!
-    
+    var availableAmount: [Amount] = []
     @IBOutlet weak var textView: UIView! {
         didSet {
             self.textView.backgroundColor = .white
@@ -43,6 +43,9 @@ class SavingVC: UIViewController {
         super.viewDidLoad()
 
         initGestureRecognizer()
+        
+        getAvailable()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,7 +82,7 @@ class SavingVC: UIViewController {
                 
                 let totalAmount = res as! DataClass
                 
-                vc.totalAmount = String(totalAmount.total).insertComma
+                vc.totalAmount = totalAmount.total
                 
                 self.present(vc, animated: true, completion: nil)
                 
@@ -180,3 +183,33 @@ extension SavingVC: UIGestureRecognizerDelegate {
     }
 }
 
+extension SavingVC {
+    func getAvailable() {
+        SavingService.shared.getAvailableSaving() {
+            [weak self]
+            data in
+            
+            switch data {
+                
+            case .success(let res):
+                
+                print(res)
+                self?.availableAmount = res as! [Amount]
+                self?.saveAmountLabel.text = self!.DecimalWon(value: Int((self?.availableAmount[0].amount)!) ?? 0) + "원"
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
+    }
+}

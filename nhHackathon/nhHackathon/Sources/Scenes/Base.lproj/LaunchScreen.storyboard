@@ -16,39 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-ap-RsH">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9n-on-jsL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplash" translatesAutoresizingMaskIntoConstraints="NO" id="wco-hM-jFw">
-                                        <rect key="frame" x="120" y="275" width="136" height="154"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSplash" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-BA-mYI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.5450980392" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="wco-hM-jFw" firstAttribute="leading" secondItem="PZs-ap-RsH" secondAttribute="leading" constant="120" id="Hkj-z1-Bs7"/>
-                                    <constraint firstItem="wco-hM-jFw" firstAttribute="top" secondItem="PZs-ap-RsH" secondAttribute="top" constant="275" id="UWp-yd-xaQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="wco-hM-jFw" secondAttribute="trailing" constant="119" id="YRD-L7-KN6"/>
-                                    <constraint firstAttribute="bottom" secondItem="wco-hM-jFw" secondAttribute="bottom" constant="383" id="qQJ-vG-r26"/>
+                                    <constraint firstAttribute="bottom" secondItem="Efj-BA-mYI" secondAttribute="bottom" id="03V-d4-tnG"/>
+                                    <constraint firstItem="Efj-BA-mYI" firstAttribute="leading" secondItem="k9n-on-jsL" secondAttribute="leading" id="81q-aI-Lpj"/>
+                                    <constraint firstItem="Efj-BA-mYI" firstAttribute="top" secondItem="k9n-on-jsL" secondAttribute="top" id="Lyj-wZ-Dbr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Efj-BA-mYI" secondAttribute="trailing" id="QQC-j6-bmh"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PZs-ap-RsH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cw4-Yv-elg"/>
-                            <constraint firstItem="PZs-ap-RsH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VTZ-9E-7Oo"/>
-                            <constraint firstAttribute="bottom" secondItem="PZs-ap-RsH" secondAttribute="bottom" id="amE-zP-jKs"/>
-                            <constraint firstItem="PZs-ap-RsH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jAm-qK-hG1"/>
+                            <constraint firstItem="k9n-on-jsL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0AS-hz-GYk"/>
+                            <constraint firstItem="k9n-on-jsL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9vh-qm-GZc"/>
+                            <constraint firstAttribute="bottom" secondItem="k9n-on-jsL" secondAttribute="bottom" id="Lr5-QN-d3c"/>
+                            <constraint firstItem="k9n-on-jsL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zOg-I7-c0o"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
     <resources>
-        <image name="imgSplash" width="140" height="156"/>
+        <image name="imgSplash" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
