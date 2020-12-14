@@ -97,8 +97,19 @@ class SavingAutoVC: UIViewController {
         // Do any additional setup after loading the view.
         self.everyDayButton.isSelected = true
         
-        self.firstButton.isSelected = true
-        self.firstButton.setBorder(borderColor: .salmon, borderWidth: 1)
+        self.secondButton.isSelected = true
+        self.secondButton.setBorder(borderColor: .salmon, borderWidth: 1)
+        
+        
+        if firstButton.isSelected == true {
+            secondButton.isSelected = false
+            firstButton.setBorder(borderColor: .salmon, borderWidth: 1)
+            secondButton.setBorder(borderColor: .veryLightPinkTwo, borderWidth: 1)
+        } else if secondButton.isSelected == true {
+            firstButton.isSelected = false
+            secondButton.setBorder(borderColor: .salmon, borderWidth: 1)
+            firstButton.setBorder(borderColor: .veryLightPinkTwo, borderWidth: 1)
+        }
         
     }
     

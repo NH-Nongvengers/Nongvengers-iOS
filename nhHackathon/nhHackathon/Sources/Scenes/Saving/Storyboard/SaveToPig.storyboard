@@ -308,6 +308,9 @@
                                 <state key="normal" title="완료❤️">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="close:" destination="YD6-4W-D8L" eventType="touchUpInside" id="8h9-uQ-HjF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저금통이 채워졌습니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIz-Xx-YSx">
                                 <rect key="frame" x="77" y="103" width="222" height="29"/>

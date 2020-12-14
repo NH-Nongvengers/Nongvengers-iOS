@@ -98,6 +98,19 @@ extension SavingFinVC: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.5) {
+            self.finishButton.transform = CGAffineTransform(translationX: self.finishButton.bounds.minX, y: 900)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.3) {
+            self.finishButton.transform = CGAffineTransform.identity
+        }
+        print("scroll end!")
+    }
+    
     
 }
 

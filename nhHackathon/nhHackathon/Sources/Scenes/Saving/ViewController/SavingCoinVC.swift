@@ -115,7 +115,7 @@ extension SavingCoinVC: UITableViewDataSource, UITableViewDelegate {
         
         cell.whereLabel.text = details[indexPath.section][indexPath.row].transactionName
         
-        cell.plusLabel.text = "+" + DecimalWon(value: details[indexPath.section][indexPath.row].changes)
+        cell.plusLabel.text = "+" + DecimalWon(value: details[indexPath.section][indexPath.row].changes) + "원"
         
         return cell
     }

@@ -139,3 +139,25 @@ extension SettingBudgetVC {
         }
     }
 }
+
+extension SettingBudgetVC: UIGestureRecognizerDelegate {
+    
+    func initGestureRecognizer() {
+        let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
+        textFieldTap.delegate = self
+        view.addGestureRecognizer(textFieldTap)
+    }
+    
+    // 다른 위치 탭했을 때 키보드 없어지는 코드
+    @objc func handleTapTextField(_ sender: UITapGestureRecognizer) {
+        UITextField.resignFirstResponder()
+    }
+    
+    
+    func gestureRecognizer(_ gestrueRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if (touch.view?.isDescendant(of: textField))! {
+            return false
+        }
+        return true
+    }
+}

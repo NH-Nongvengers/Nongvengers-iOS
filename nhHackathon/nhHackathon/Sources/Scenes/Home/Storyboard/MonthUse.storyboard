@@ -462,7 +462,7 @@
                                                     <rect key="frame" x="111.66666666666667" y="16" width="28.000000000000014" height="13"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqf-iE-6FG">
-                                                            <rect key="frame" x="5" y="2" width="19" height="11"/>
+                                                            <rect key="frame" x="0.0" y="2" width="28" height="11"/>
                                                             <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="9"/>
                                                             <color key="textColor" red="0.2901960784" green="0.80392156859999997" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -470,10 +470,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="dqf-iE-6FG" secondAttribute="trailing" constant="4" id="Ohd-qy-qFF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dqf-iE-6FG" secondAttribute="trailing" id="ELf-gk-ty2"/>
                                                         <constraint firstAttribute="height" constant="13" id="XVP-wd-Oq9"/>
                                                         <constraint firstAttribute="width" constant="28" id="YTK-vd-YjR"/>
-                                                        <constraint firstItem="dqf-iE-6FG" firstAttribute="leading" secondItem="moZ-Xf-tAf" secondAttribute="leading" constant="5" id="i40-ap-J3y"/>
+                                                        <constraint firstItem="dqf-iE-6FG" firstAttribute="leading" secondItem="moZ-Xf-tAf" secondAttribute="leading" id="jSG-TE-MGA"/>
                                                         <constraint firstItem="dqf-iE-6FG" firstAttribute="top" secondItem="moZ-Xf-tAf" secondAttribute="top" constant="2" id="ptT-dS-QoZ"/>
                                                         <constraint firstAttribute="bottom" secondItem="dqf-iE-6FG" secondAttribute="bottom" id="uXi-4f-E0E"/>
                                                     </constraints>

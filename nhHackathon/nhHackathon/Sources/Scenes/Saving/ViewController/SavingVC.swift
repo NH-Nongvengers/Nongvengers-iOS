@@ -121,7 +121,6 @@ extension SavingVC: UITextFieldDelegate {
     }
 }
 
-
 extension SavingVC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
@@ -146,8 +145,8 @@ extension SavingVC: UIGestureRecognizerDelegate {
     // keyboard가 보여질 때 어떤 동작을 수행
     @objc func keyboardWillShow(_ notification: NSNotification) {
         
-        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
-        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+        guard (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) != nil else { return }
+        guard (notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt) != nil else { return }
         
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
@@ -164,8 +163,8 @@ extension SavingVC: UIGestureRecognizerDelegate {
     
     // keyboard가 사라질 때 어떤 동작을 수행
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {return}
-        guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {return}
+        guard (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double) != nil else {return}
+        guard (notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt) != nil else {return}
         
         self.view.layoutIfNeeded()
     }

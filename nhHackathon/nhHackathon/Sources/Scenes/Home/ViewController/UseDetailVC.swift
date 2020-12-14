@@ -103,8 +103,9 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
         view.backgroundColor = .white
         
         let label = UILabel()
-        keyList[section].remove(at: keyList[section].startIndex)
-        label.text = "\(keyList[section])일"
+        // keyList[section].remove(at: keyList[section].startIndex)
+        // label.text = "\(keyList[section])일"
+        label.text = "\(13 - section)일"
         label.textColor = .veryLightPink
         label.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 14)
         label.frame = CGRect(x: 20, y: 6, width: 30, height: 20)

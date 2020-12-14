@@ -29,3 +29,4 @@ class budgetCVC: UICollectionViewCell {
     }
     
 }
+
