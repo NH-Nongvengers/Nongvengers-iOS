@@ -7,48 +7,72 @@
 
 import UIKit
 
-/**TEST STRUCT*/
-struct overUse {
-    var title: String
-    var percent: Int
-    var budget: Int
-    var use: Int
-    var categoryImg: String
-}
+var categoryImgList : [String] = ["iconReportFood", "iconReportShopping", "iconReportLife", "iconReportBerr", "iconReportBeauty", "iconReportCoffee", "iconReportTravel", "iconReportCall", "iconReportMore"]
 
 class categoryUseTVC: UITableViewCell {
-
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            self.collectionView.dataSource = self
-        }
-    }
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        getOverData()
     }
-
-    var overUseList : [overUse] = [overUse(title: "식비", percent: 120, budget: 600000, use: 900000, categoryImg: ""), overUse(title: "식비", percent: 120, budget: 600000, use: 900000, categoryImg: ""), overUse(title: "식비", percent: 120, budget: 600000, use: 900000, categoryImg: "")]
-    
+    var overList: [OverConsumption] = []
 }
 
 extension categoryUseTVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return overUseList.count
+        return overList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "overCVC", for: indexPath) as! overCVC
         
-        let category = overUseList[indexPath.row]
+        let category = overList[indexPath.row]
         
-        cell.budgetLabel.text = String(category.budget) + " 원"
-        cell.useLabel.text = String(category.use) + " 원"
-        cell.categoryLabel.text = category.title
+        cell.budgetLabel.text = changeToWon(value: category.budget) + " 원"
+        cell.useLabel.text = changeToWon(value: category.consumption!) + " 원"
+        cell.categoryLabel.text = category.categoryName
         cell.percentLabel.text = String(category.percent) + "%"
+        cell.categoryImage.image = UIImage(named: categoryImgList[category.categoryIdx - 1])
         
         return cell
     }
     
+}
+
+extension categoryUseTVC {
+    
+    /* 통신 */
+    func getOverData(){
+        ReportService.shared.getReportDetail(planIdx: 1) {
+            [weak self]
+            data in
+            guard let `self` = self else { return }
+            switch data{
+            case .success(let res) :
+                
+                let report = res as! Report
+                
+                print(report.overConsumption)
+                
+                self.overList = report.overConsumption
+                
+                self.collectionView.dataSource = self
+                self.collectionView.reloadData()
+                
+            case .requestErr(_):
+                print("request err")
+            case .pathErr:
+                print("path err")
+            case .serverErr:
+                print("server err")
+            case .networkFail:
+                print("network err")
+            case .dbErr:
+                print("db err")
+            }
+        }
+    }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class myUseTVC: UITableViewCell {
 
+    var index: Int = 0
+    
     @IBOutlet weak var categoryImage: UIImageView!
     
     @IBOutlet weak var categoryLabel: UILabel!

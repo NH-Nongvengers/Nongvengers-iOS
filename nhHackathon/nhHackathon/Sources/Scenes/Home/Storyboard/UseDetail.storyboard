@@ -66,8 +66,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H42-UC-fvU" customClass="onlyLeftRoundView" customModule="nhHackathon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="90"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-Yz-y3b">
-                                                <rect key="frame" x="15.000000000000002" y="18" width="29.666666666666671" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJv-Yz-y3b">
+                                                <rect key="frame" x="15" y="18" width="0.0" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="1o7-PZ-N6e"/>
                                                 </constraints>
@@ -75,8 +75,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWM-os-SAX">
-                                                <rect key="frame" x="14.999999999999996" y="40" width="59.666666666666657" height="33"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWM-os-SAX">
+                                                <rect key="frame" x="15" y="40" width="0.0" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="33" id="qoC-xb-HxO"/>
                                                 </constraints>
@@ -84,8 +84,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 식비 총 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-jV-WKu">
-                                                <rect key="frame" x="44.666666666666657" y="18" width="74" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-jV-WKu">
+                                                <rect key="frame" x="15" y="18" width="0.0" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="jDj-ki-jQL"/>
                                                 </constraints>
@@ -107,7 +107,7 @@
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EdU-HO-S0s">
                                         <rect key="frame" x="271" y="16" width="58" height="58"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EdU-HO-S0s" secondAttribute="height" multiplier="1:1" id="uWn-tK-Iff"/>
                                         </constraints>
@@ -257,6 +257,7 @@
                     <connections>
                         <outlet property="categoryImageView" destination="EdU-HO-S0s" id="T4L-Rp-eZn"/>
                         <outlet property="categoryLabel" destination="PXT-jV-WKu" id="6AE-7U-8S3"/>
+                        <outlet property="categorySettingView" destination="H42-UC-fvU" id="Now-OM-a0j"/>
                         <outlet property="monthLabel" destination="HJv-Yz-y3b" id="h9s-CL-yg8"/>
                         <outlet property="monthlyHistoryTableView" destination="Nn4-0u-zZk" id="qv8-UQ-xaS"/>
                         <outlet property="monthlyUseView" destination="DT7-rd-4WJ" id="HYL-Sg-S3Z"/>
