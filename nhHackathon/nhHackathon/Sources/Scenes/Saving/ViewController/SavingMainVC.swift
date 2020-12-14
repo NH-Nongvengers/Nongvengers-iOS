@@ -131,6 +131,8 @@ extension SavingMainVC: UITableViewDelegate {
             
             let dvc = sb.instantiateViewController(withIdentifier: "SavingDetailVC") as! SavingDetailVC
             
+            dvc.amount = saveAmountList[indexPath.row]
+            
             print("CLICKED: 카테고리 Cell")
             
             self.present(dvc, animated: true)
@@ -138,12 +140,15 @@ extension SavingMainVC: UITableViewDelegate {
             
             let dvc = sb.instantiateViewController(withIdentifier: "SavingTiggleVC") as! SavingTiggleVC
             
+            dvc.amount = saveAmountList[indexPath.row]
+            
             print("CLICKED: 카테고리 Cell")
             
             self.present(dvc, animated: true)
         } else {
             
             let dvc = sb.instantiateViewController(withIdentifier: "SavingCoinVC") as! SavingCoinVC
+            
             
             print("CLICKED: 카테고리 Cell")
             

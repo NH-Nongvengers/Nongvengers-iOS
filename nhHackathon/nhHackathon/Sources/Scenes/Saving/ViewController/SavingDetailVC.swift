@@ -11,6 +11,10 @@ class SavingDetailVC: UIViewController {
     
     //MARK: - Init
     
+    var amount: String = ""
+    
+    var getData: [MonthlySave] = []
+    
     @IBOutlet weak var viewTitleLabel: UILabel!
     
     @IBOutlet weak var totalSavingLabel: UILabel!
@@ -23,9 +27,11 @@ class SavingDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.savingTableView.dataSource = self
-        
         self.savingTableView.delegate = self
+        
+        self.totalSavingLabel.text = amount + "원"
+        
+        getMonthlySaving()
         
     }
     
@@ -38,7 +44,7 @@ class SavingDetailVC: UIViewController {
     @IBAction func back(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-    
+        
     }
     
 }
@@ -65,17 +71,20 @@ extension SavingDetailVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return monthlySavingList.count
+        return getData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "savingAfterSavingTVC") as! savingAfterSavingTVC
         
-        let data = monthlySavingList[indexPath.row]
-        
-        cell.monthLabel.text = String(12 - indexPath.row) + "월"
-        cell.useLabel.text = String(data)
+        let get = getData[indexPath.row]
+
+        let startIdx: String.Index = get.period.index(get.period.startIndex, offsetBy: 5)
+        let result = String(get.period[startIdx...])
+
+        cell.monthLabel.text = result + "월"
+        cell.useLabel.text = DecimalWon(value: Int(get.amount)!)
         
         return cell
         
@@ -96,4 +105,42 @@ extension SavingDetailVC: UITableViewDataSource, UITableViewDelegate {
         
         self.present(dvc, animated: true)
     }
+}
+
+extension SavingDetailVC {
+    func getMonthlySaving() {
+        SavingService.shared.getMonthlySaving() {
+            [weak self]
+            data in
+            
+            switch data {
+            
+            case .success(let res):
+                
+                
+                self?.getData = res as! [MonthlySave]
+                
+                print(self!.getData)
+                print(res)
+                self?.savingTableView.reloadData()
+                self?.savingTableView.dataSource = self
+                
+            case .requestErr( _):
+                print(".requestErr")
+                break
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print(".serverErr")
+            case .networkFail:
+                print(".networkFail")
+            case .dbErr:
+                print("db error")
+                
+            }
+        }
+    }
+    
+    
+    
 }

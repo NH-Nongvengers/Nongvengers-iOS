@@ -120,6 +120,112 @@ struct SavingService {
         
     }
     
+    /* 티끌 모으기 */
+    func getTiggle(completion: @escaping (NetworkResult<Any>) -> Void) {
+        
+        let URL = APIConstants.saveTiggleURL
+        
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json",
+        ]
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .responseData { response in
+                
+                switch response.result {
+                    
+                // 통신 성공
+                case .success:
+                    if let value = response.result.value {
+                        if let status = response.response?.statusCode {
+                            switch status {
+                            case 200:
+                                do {
+                                    let decoder = JSONDecoder()
+                                    let result = try decoder.decode(ResponseObject<Tiggle>.self, from: value)
+                                    print("티끌 상세 내역 Success")
+                                    completion(.success(result.data))
+                                    
+                                } catch {
+                                    print("티끌 상세 내역 path Err")
+                                    completion(.pathErr)
+                                }
+                            case 400, 401:
+                                completion(.pathErr)
+                                print("내 문제: 티끌 상세 내역 path Err")
+                            case 600:
+                                completion(.serverErr)
+                                print("티끌 상세 내역 server err")
+                            default:
+                                
+                                break
+                            }
+                        }
+                    }
+                    break
+                    
+                // 통신 실패
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    completion(.networkFail)
+                    break
+                }
+        }
+    }
+    
+    func getLeft(completion: @escaping (NetworkResult<Any>) -> Void) {
+        
+        let URL = APIConstants.saveCoinURL
+        
+        let header: HTTPHeaders = [
+            "Content-Type" : "application/json",
+        ]
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .responseData { response in
+                
+                switch response.result {
+                    
+                // 통신 성공
+                case .success:
+                    if let value = response.result.value {
+                        if let status = response.response?.statusCode {
+                            switch status {
+                            case 200:
+                                do {
+                                    let decoder = JSONDecoder()
+                                    let result = try decoder.decode(ResponseObject<Coin>.self, from: value)
+                                    print("티끌 상세 내역 Success")
+                                    completion(.success(result.data))
+                                    
+                                } catch {
+                                    print("티끌 상세 내역 path Err")
+                                    completion(.pathErr)
+                                }
+                            case 400, 401:
+                                completion(.pathErr)
+                                print("내 문제: 티끌 상세 내역 path Err")
+                            case 600:
+                                completion(.serverErr)
+                                print("티끌 상세 내역 server err")
+                            default:
+                                
+                                break
+                            }
+                        }
+                    }
+                    break
+                    
+                // 통신 실패
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    completion(.networkFail)
+                    break
+                }
+        }
+    }
+    
+    
     func getAvailableSaving(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let URL = APIConstants.availableAmountURL
@@ -235,7 +341,7 @@ struct SavingService {
     //PUT: 저축하기
     func changeBudget(_ food: Int, _ shopping: Int, _ life: Int, _ drink: Int, _ beauty: Int, _ cafe: Int, _ trip: Int, _ communication: Int, _ etc: Int, completion: @escaping(NetworkResult<Any>) -> Void){
         
-        let URL = APIConstants.savingURL
+        let URL = APIConstants.updateBudgetURL
         
         let header: HTTPHeaders = [
             "Content-Type" : "application/json"
@@ -264,9 +370,9 @@ struct SavingService {
                         case 200, 201:
                             do {
                                 let decoder = JSONDecoder()
-                                let result = try decoder.decode(ResponseString.self, from: value)
+                                let result = try decoder.decode(ResponseArray<String>.self, from: value)
                                 print(result)
-                                completion(.success(result.data))
+                                completion(.success(result.message))
                             }
                             catch {
                                 completion(.pathErr)
@@ -280,6 +386,7 @@ struct SavingService {
                             completion(.serverErr)
                             
                         default:
+                            print("is it here?")
                             print(status)
                         }// switch
                     }// iflet

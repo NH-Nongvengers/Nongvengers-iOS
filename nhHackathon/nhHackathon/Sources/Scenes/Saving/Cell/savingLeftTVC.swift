@@ -17,6 +17,8 @@ class savingLeftTVC: UITableViewCell {
     
     @IBOutlet weak var sumLabel: UILabel!
     
+    
+    
     @IBOutlet weak var dotView: UIView! {
         didSet {
             self.dotView.backgroundColor = .aquaMarine

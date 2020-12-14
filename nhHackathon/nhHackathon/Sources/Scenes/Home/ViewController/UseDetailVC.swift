@@ -21,6 +21,17 @@ class UseDetailVC: UIViewController {
         }
     }
     
+    var testing : [String: [Detail]]?
+    
+    
+    var keyList : [String] = []
+    var valueList: [[String]] = []
+    
+    var count: Int = 0
+    var details: [[Detail]] = []
+    
+    var detail: [Detail] = []
+    
     @IBOutlet weak var categorySettingView: onlyLeftRoundView! {
         didSet {
             self.categorySettingView.backgroundColor = .salmon
@@ -54,6 +65,7 @@ class UseDetailVC: UIViewController {
         self.monthlyHistoryTableView.delegate = self
         
         getUseDetail()
+        
         
     }
     
@@ -91,7 +103,8 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
         view.backgroundColor = .white
         
         let label = UILabel()
-        label.text = "\(section)일"
+        keyList[section].remove(at: keyList[section].startIndex)
+        label.text = "\(keyList[section])일"
         label.textColor = .veryLightPink
         label.font = UIFont(name: "SpoqaHanSansNeo-Bold", size: 14)
         label.frame = CGRect(x: 20, y: 6, width: 30, height: 20)
@@ -106,12 +119,12 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return keyList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return details[section].count
         
     }
     
@@ -121,10 +134,16 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.row == 0 {
             
-            cell.topLine.isHidden = true
-            cell.bottomLine.isHidden = false
+            if details[indexPath.section].count == 1 {
+                cell.topLine.isHidden = true
+                cell.bottomLine.isHidden = true
+            } else {
+                
+                cell.topLine.isHidden = true
+                cell.bottomLine.isHidden = false
+            }
             
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == details[indexPath.section].count - 1 {
             
             cell.topLine.isHidden = false
             cell.bottomLine.isHidden = true
@@ -133,8 +152,15 @@ extension UseDetailVC : UITableViewDataSource, UITableViewDelegate {
             
             cell.topLine.isHidden = false
             cell.bottomLine.isHidden = false
-        
+            
         }
+        
+        cell.timeLabel.text = details[indexPath.section][indexPath.row].time
+        
+        cell.useLabel.text = DecimalWon(value: details[indexPath.section][indexPath.row].amount) + "원"
+        
+        cell.detailLabel.text = details[indexPath.section][indexPath.row].transactionName
+        
         
         return cell
         
@@ -163,7 +189,35 @@ extension UseDetailVC {
                 self.totalLabel.text = self.DecimalWon(value: (self.monthDetail?.amountOfCategory.balance)!) + "원"
                 
                 print("==== 소비 상세 쪼개기 3 =====")
-                print(self.monthDetail?.transactionDetails)
+                
+                self.testing = self.monthDetail?.transactionDetails
+                print("== testing ===>")
+                print(self.testing?.keys)
+                print(self.testing?.values)
+                
+                
+                print("<<< KEY >>>")
+                let keyValues = self.testing?.keys.map({$0})
+                
+                self.count = (self.testing?.keys.count)!
+                
+                self.keyList = keyValues!
+                
+                let arrayValues = self.testing?.values.map({$0})
+                
+                self.details = arrayValues!
+                
+                print("=== 디테일 ===")
+                print(self.details)
+                print(self.details.count)
+                
+                // print(self.details[0][0].amount)
+                // print(self.details[1][0].amount)
+                
+                self.monthlyHistoryTableView.dataSource = self
+                self.monthlyHistoryTableView.reloadData()
+                
+                
                 
             case .requestErr(_):
                 print("request err")

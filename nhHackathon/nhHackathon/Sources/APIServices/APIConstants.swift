@@ -24,6 +24,8 @@ struct APIConstants {
     
     // 잔돈 모으기
     static let saveCoinURL = BaseURL + "/api/savings/changes"
+    // 티끌 모으기
+    static let saveTiggleURL = BaseURL + "/api/savings/coins"
     
     /* 예산 */
     static let updateBudgetURL = BaseURL + "/api/plan/budget"

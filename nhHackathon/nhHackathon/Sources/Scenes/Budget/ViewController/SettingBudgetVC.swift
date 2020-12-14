@@ -55,13 +55,11 @@ class SettingBudgetVC: UIViewController {
     @IBAction func finish(_ sender: Any) {
         SavingService.shared.changeBudget(0, 0, 0, 0, 0, 0, 0, 0, 0){ data in
             switch data {
-                
-            case .success(let res) :
+
+            case .success :
                 print("예산 업데이트 하기 성공")
                 
                 print("=== PUT: 예산 업데이트 ===")
-                
-                let totalAmount = res as! DataClass
                 
                 self.dismiss(animated: true, completion: nil)
                 
@@ -69,7 +67,7 @@ class SettingBudgetVC: UIViewController {
                 print("절약 저축 requestErr")
                 print(msg)
             case .pathErr:
-                print("절약 저축 pathErr")
+                print("here pathErr")
             case .serverErr:
                 print("절약 저축 serverErr")
             case .networkFail:

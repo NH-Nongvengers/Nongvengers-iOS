@@ -454,6 +454,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountLable" destination="Q6y-2K-Ixc" id="Phd-Nr-TV2"/>
                         <outlet property="autoSaveButton" destination="gMI-mF-6y1" id="fFF-fk-oIC"/>
                         <outlet property="tiggleTableView" destination="43d-Oo-7e9" id="rmU-nO-G9T"/>
                     </connections>
@@ -700,6 +701,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountLabel" destination="tAZ-XT-T6K" id="Fxw-NC-Dxx"/>
                         <outlet property="leftTableView" destination="v04-xh-gpM" id="Khv-vJ-X6l"/>
                     </connections>
                 </viewController>

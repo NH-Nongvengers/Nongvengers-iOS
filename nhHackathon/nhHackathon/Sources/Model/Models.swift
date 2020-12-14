@@ -106,3 +106,33 @@ struct SumBudgetCategory: Codable {
 struct Amount: Codable{
     let amount: String
 }
+
+
+// MARK: - Tiggle
+struct Tiggle: Codable {
+    let total: String
+    let history: History
+}
+
+// MARK: - History
+struct History: Codable {
+    let m12: [String: [Detail]]
+}
+
+
+struct Detail2: Codable {
+    let changes: Int
+    let transactionName: String
+    let amount: Int
+    let time: String
+}
+
+
+struct Coin: Codable {
+    let total: String
+    let history: History2
+}
+
+struct History2: Codable {
+    let m12, m11, m10 : [String: [Detail2]]
+}
